@@ -112,7 +112,7 @@
                 </li>
                 <li class="app-sidebar__heading">Room Section</li>
                 <li>
-                    <a href="/listtraining">
+                    <a href="{{ route('display.room.form') }}">
                         <i class="metismenu-icon pe-7s-mouse">
                         </i>Add Rooms
                     </a>

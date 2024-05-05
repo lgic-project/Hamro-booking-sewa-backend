@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HotelController;
+use App\Http\Controllers\RoomController;
 use App\Models\HotelOwner;
 use App\Models\HotelRooms;
 
@@ -31,5 +32,7 @@ Route::post('/update/{id}', [HotelController::class, 'update'])->name('update.ow
 
 
 
-Route::get('/addrooms', [HotelRooms::class, 'index'])->name('displayrooms');
-Route::post('/createrooms', [HotelRooms::class, 'create'])->name('createrooms');
+//routes for hotel rooms
+Route::get('/rooms', [RoomController::class, 'index'])->name('Addrooms');
+Route::get('/createrooms', [RoomController::class, 'display'])->name('display.room.form');
+Route::post('/createrooms', [RoomController::class, 'create'])->name('createrooms');
