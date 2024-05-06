@@ -33,4 +33,9 @@ class RoomController extends Controller
         $roomData->save();
          return redirect()->back()->with('success', 'New hotel room added successfully');
     }
+    public function list()
+    {
+        $roomData = HotelRooms::all();
+        return view('admin.modules.hotelrooms.list', compact('roomData'));
+    }
 }

@@ -116,6 +116,10 @@
                         <i class="metismenu-icon pe-7s-mouse">
                         </i>Add Rooms
                     </a>
+                     <a href="{{ route('display.room.form') }}">
+                        <i class="metismenu-icon pe-7s-mouse">
+                        </i>List Rooms
+                    </a>
                 </li>
                 <li class="app-sidebar__heading">रोजगारदाता अनुरोध सूची</li>
                 <li>

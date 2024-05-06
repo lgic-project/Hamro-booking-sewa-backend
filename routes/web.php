@@ -36,3 +36,4 @@ Route::post('/update/{id}', [HotelController::class, 'update'])->name('update.ow
 Route::get('/rooms', [RoomController::class, 'index'])->name('Addrooms');
 Route::get('/createrooms', [RoomController::class, 'display'])->name('display.room.form');
 Route::post('/createrooms', [RoomController::class, 'create'])->name('createrooms');
+Route::get('/listrooms', [RoomController::class, 'list'])->name('listrooms');
