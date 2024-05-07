@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="position-relative form-group col-6">
                                     <label for="rating" class="">rating
-                                </label><input name="rating" id="room_thumbnail" value="{{$roomData->rating}}" placeholder="rating" type="text" class="form-control" value="{{ $roomData->rating }}" wfd-id="id4">
+                                </label><input name="rating" id="rating" value="{{$roomData->rating}}" placeholder="rating" type="text" class="form-control" value="{{ $roomData->rating }}" wfd-id="id4">
                                 </div>
 
                             </div>
