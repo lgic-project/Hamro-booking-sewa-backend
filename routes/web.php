@@ -37,3 +37,6 @@ Route::get('/rooms', [RoomController::class, 'index'])->name('Addrooms');
 Route::get('/createrooms', [RoomController::class, 'display'])->name('display.room.form');
 Route::post('/createrooms', [RoomController::class, 'create'])->name('createrooms');
 Route::get('/listrooms', [RoomController::class, 'list'])->name('listrooms');
+Route::get('/edit/{id}', [RoomController::class, 'edit'])->name('edit.rooms');
+Route::post('/update/{id}', [RoomController::class, 'update'])->name('update.rooms');
+

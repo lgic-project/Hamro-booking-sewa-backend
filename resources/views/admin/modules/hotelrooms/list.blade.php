@@ -36,7 +36,7 @@
                     <td>{{ $roomData->total_rooms }}</td>
                     <td>{{ $roomData->is_available }}</td>
                     <td>
-                        <a href="" class="btn btn-primary btn-lg" style="font-size: 1.1rem;"><i class="fas fa-edit"></i>
+                        <a href="{{route ('edit.rooms', ['id' => $roomData->id]) }}" class="btn btn-primary btn-lg" style="font-size: 1.1rem;"><i class="fas fa-edit"></i>
                             Edit</a>
                         <a href="" class="btn btn-danger btn-lg show_confirm " onclick="return confirm('Are you sure you want to delete this?');" style="font-size: 1.1rem;"><i class="fas fa-user-times"></i>
                             Remove</a>

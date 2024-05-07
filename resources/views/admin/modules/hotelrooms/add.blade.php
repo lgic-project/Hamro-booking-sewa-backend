@@ -103,7 +103,7 @@
                             <input type="text" class="form-control" name="price" placeholder="price">
                         </div>
                         <div class="form-group">
-                            <label>Total Roms</label>
+                            <label>Total Rooms</label>
                             <input type="number" class="form-control" name="total_rooms" placeholder="total_rooms">
                         </div>
                         <div class="form-group">

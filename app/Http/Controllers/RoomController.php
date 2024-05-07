@@ -38,4 +38,33 @@ class RoomController extends Controller
         $roomData = HotelRooms::all();
         return view('admin.modules.hotelrooms.list', compact('roomData'));
     }
+    public function edit($id)
+    {
+        $roomData = HotelRooms::find($id);
+        return view('admin.modules.hotelrooms.update', compact('roomData'));
+    }
+    public function update(Request $request, $id)
+    {
+        $roomData = HotelRooms::find($id);
+        $roomData->title = $request->owner_title;
+        $roomData->room_gallery = $request->room_gallery;
+        $roomData->price = $request->price;
+        $roomData->description = $request->description;
+        $roomData->total_rooms = $request->total_rooms;
+        $roomData->is_available = $request->is_available;
+
+
+        if ($request->has('room_gallery')) {
+
+            File::delete(public_path('images/hotel/' . $roomData->room_gallery));
+
+            $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
+            // dd($newThumbnailImageName);
+            $request->room_gallery->move('images/hotel/', $newThumbnailImageName);
+
+            $roomData->room_gallery = $newThumbnailImageName;
+        }
+        $roomData->save();
+        return redirect()->route('listrooms')->with('success', 'Data updated successfully!!');
+    }
 }
