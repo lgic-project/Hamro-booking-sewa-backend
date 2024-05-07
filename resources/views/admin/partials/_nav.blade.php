@@ -116,7 +116,7 @@
                         <i class="metismenu-icon pe-7s-mouse">
                         </i>Add Rooms
                     </a>
-                     <a href="{{ route('display.room.form') }}">
+                     <a href="{{ route('listrooms') }}">
                         <i class="metismenu-icon pe-7s-mouse">
                         </i>List Rooms
                     </a>
