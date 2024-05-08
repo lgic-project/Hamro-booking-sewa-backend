@@ -38,7 +38,7 @@
                     <td>
                         <a href="{{route ('edit.rooms', ['id' => $roomData->id]) }}" class="btn btn-primary btn-lg" style="font-size: 1.1rem;"><i class="fas fa-edit"></i>
                             Edit</a>
-                        <a href="{{ route('delete.owner', ['id' => $roomData->id]) }}" class="btn btn-danger btn-lg show_confirm " onclick="return confirm('Are you sure you want to delete this?');" style="font-size: 1.1rem;"><i class="fas fa-user-times"></i>
+                        <a href="{{ route('delete.rooms', ['id' => $roomData->id]) }}" class="btn btn-danger btn-lg show_confirm " onclick="return confirm('Are you sure you want to delete this?');" style="font-size: 1.1rem;"><i class="fas fa-user-times"></i>
                             Remove</a>
                     </td>
                 </tr>

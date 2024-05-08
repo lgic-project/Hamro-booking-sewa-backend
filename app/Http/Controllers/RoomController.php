@@ -71,4 +71,10 @@ class RoomController extends Controller
         $roomData->save();
         return redirect()->route('listrooms')->with('success', 'Data updated successfully!!');
     }
+    public function delete($id)
+    {
+        $roomData = HotelRooms::find($id);
+        $roomData->delete();
+        return redirect()->route('listrooms')->with('message', 'Data deleted successfully!!');
+    }
 }
