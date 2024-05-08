@@ -5,12 +5,20 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\HotelOwner;
-use App\Models\HotelRooms;
 use Illuminate\Support\Str;
 use File;
 
 class HotelController extends Controller
 {
+
+    //for data to display in mobile format:
+    public function listMobile()
+    {
+        $hotelownerData = HotelOwner::all();
+        return response()->json($hotelownerData);
+    }
+
+    //first page to popup
     public function index()
     {
         return view('admin.modules.hotelowner.add');
