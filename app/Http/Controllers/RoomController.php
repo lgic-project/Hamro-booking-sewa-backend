@@ -33,7 +33,7 @@ class RoomController extends Controller
         $roomData->fill($request->all());
         $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
         // dd($newThumbnailImageName);
-        $request->room_gallery->move('images/hotel/$title', $newThumbnailImageName);
+        $request->room_gallery->move('images/hotel/room/', $newThumbnailImageName);
 
         $roomData->room_gallery = $newThumbnailImageName;
 

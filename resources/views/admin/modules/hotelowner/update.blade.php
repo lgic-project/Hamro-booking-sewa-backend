@@ -17,12 +17,12 @@
                     <div class="card-body">
                         <div class="card-title">Edit hotel details</div>
                         <hr />
-                        <form class="" method="post" action="/update/{{$hotelownerData->id}}" enctype="multipart/form-data">
+                        <form class="" method="post" action="/updateowner/{{$hotelownerData->id}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
 
                                 <div class="position-relative form-group col-6"><label for="photos" class="">Photo</label>
-                                    <img src="images/hotel/{{$hotelownerData->photos}}" style="width:100px; height:100px;" />
+                                    <img src="/images/hotel/{{$hotelownerData->photos}}" style="width:100px; height:100px;" />
                                     <input name="photos" id="photos" type="file" class="form-control-file" wfd-id="id6">
                                 </div>
 

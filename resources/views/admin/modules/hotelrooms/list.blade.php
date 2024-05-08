@@ -30,7 +30,7 @@
                         echo $counterVar;
                         @endphp
                     </th>
-                    <th><img src="/images/hotel/{{$roomData->room_gallery }}" style="width: 80px; object-fit: cover; height: 80px;"></th>
+                    <th><img src="images/hotel/room/{{$roomData->room_gallery }}" style="width: 80px; object-fit: cover; height: 80px;"></th>
                     <td>{{ $roomData->title }}</td>
                     <td>{{ $roomData->price }}</td>
                     <td>{{ $roomData->total_rooms }}</td>

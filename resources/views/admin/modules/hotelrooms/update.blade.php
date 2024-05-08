@@ -17,12 +17,12 @@
                     <div class="card-body">
                         <div class="card-title">Edit Rooms Details</div>
                         <hr />
-                        <form class="" method="post" action="/update/{{$roomData->id}}" enctype="multipart/form-data">
+                        <form class="" method="post" action="/updaterooms/{{$roomData->id}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
 
                                 <div class="position-relative form-group col-6"><label for="photos" class="">Photo</label>
-                                    <img src="images/hotel/{{$roomData->room_gallery}}" style="width:100px; height:100px;" />
+                                    <img src="/images/hotel/room/{{$roomData->room_gallery}}" style="width:100px; height:100px;" />
                                     <input name="room_gallery" id="room_gallery" type="file" class="form-control-file" wfd-id="id6">
                                 </div>
 
@@ -48,15 +48,15 @@
 
                                 <div class="position-relative form-group col-6">
                                     <label for="location" class="">is_available
-                                </label><input name="is_available" id="is_available" value="{{$roomData->is_available}}" placeholder="is_available" type="text" class="form-control" value="{{ $roomData->is_available }}" wfd-id="id4">
+                                    </label><input name="is_available" id="is_available" value="{{$roomData->is_available}}" placeholder="is_available" type="text" class="form-control" value="{{ $roomData->is_available }}" wfd-id="id4">
                                 </div>
                                 <div class="position-relative form-group col-6">
                                     <label for="room_thumbnail" class="">room_thumbnail
-                                </label><input name="room_thumbnail" id="room_thumbnail" value="{{$roomData->room_thumbnail}}" placeholder="is_available" type="text" class="form-control" value="{{ $roomData->room_thumbnail }}" wfd-id="id4">
+                                    </label><input name="room_thumbnail" id="room_thumbnail" value="{{$roomData->room_thumbnail}}" placeholder="is_available" type="text" class="form-control" value="{{ $roomData->room_thumbnail }}" wfd-id="id4">
                                 </div>
                                 <div class="position-relative form-group col-6">
                                     <label for="rating" class="">rating
-                                </label><input name="rating" id="rating" value="{{$roomData->rating}}" placeholder="rating" type="text" class="form-control" value="{{ $roomData->rating }}" wfd-id="id4">
+                                    </label><input name="rating" id="rating" value="{{$roomData->rating}}" placeholder="rating" type="text" class="form-control" value="{{ $roomData->rating }}" wfd-id="id4">
                                 </div>
 
                             </div>
