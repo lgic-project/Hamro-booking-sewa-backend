@@ -11,11 +11,10 @@
             <thead>
                 <tr>
                     <th>S.N</th>
-                    <th>Photo</th>
                     <th>Title</th>
+                    <th>Photo</th>
                     <th>Price</th>
                     <th>Total Rooms</th>
-                    <th>Action</th>
                     <th>Availability</th>
                 </tr>
             </thead>
@@ -30,7 +29,7 @@
                         echo $counterVar;
                         @endphp
                     </th>
-                    <th><img src="images/hotel/room/{{$roomData->room_gallery }}" style="width: 80px; object-fit: cover; height: 80px;"></th>
+                    <th><img src="/images/hotel/room/{{$roomData->room_gallery }}" style="width: 80px; object-fit: cover; height: 80px;"></th>
                     <td>{{ $roomData->title }}</td>
                     <td>{{ $roomData->price }}</td>
                     <td>{{ $roomData->total_rooms }}</td>
