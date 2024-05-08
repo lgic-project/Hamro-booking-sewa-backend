@@ -41,3 +41,8 @@ Route::post('/createrooms', [RoomController::class, 'create'])->name('createroom
 Route::get('/listrooms', [RoomController::class, 'list'])->name('listrooms');
 Route::get('/edit/{id}', [RoomController::class, 'edit'])->name('edit.rooms');
 Route::post('/update/{id}', [RoomController::class, 'update'])->name('update.rooms');
+<<<<<<< HEAD
+=======
+Route::get('/delete/{id}', [RoomController::class, 'delete'])->name('delete.rooms');
+
+>>>>>>> 8ba1096d7ff4fa9da9d5606b64cb6c7dbf655725
