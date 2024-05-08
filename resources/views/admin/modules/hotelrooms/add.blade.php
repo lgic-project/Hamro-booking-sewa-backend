@@ -90,15 +90,15 @@
                     <h2> Add Hotel </h2>
                     <form method="post" action="/createrooms" enctype="multipart/form-data">
                         @csrf
-                        <div class="form-group">
+                        <div class="form-group ">
                             <label>Room category</label>
                             <input type="text" class="form-control" name="title" placeholder="Room Category">
                          </div>
-                         <div class="form-group">
+                         <div class="form-group ">
                             <label>Hote id</label>
                             <input type="text" class="form-control" name="hotel_owner_id" placeholder="Hotel id">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group ">
                             <label>Price</label>
                             <input type="text" class="form-control" name="price" placeholder="price">
                         </div>
@@ -122,6 +122,7 @@
                             <label>Thmbnail</label>
                             <input type="text" class="form-control" name="room_thumbnail" placeholder="room_thumbnail">
                         </div>
+                        
                         <div class="form-group">
                             <label>Description</label>
                             <textarea id="descriptionEditor" class="form-control" name="description"></textarea>
