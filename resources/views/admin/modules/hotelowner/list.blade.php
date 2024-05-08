@@ -34,9 +34,10 @@
                     <td>{{ $hotelownerData->phone_number }}</td>
                     <td>{{ $hotelownerData->email }}</td>
                     <td>
-                        <a href="{{route ('edit.owner', ['id' => $hotelownerData->id]) }}" class="btn btn-primary btn-lg" style="font-size: 1.1rem;"><i class="fas fa-edit"></i>
+                        <a href="{{ route('edit.owner', ['id' => $hotelownerData->id]) }}" class="btn btn-primary btn-lg" style="font-size: 1.1rem;">
                             Edit</a>
-                        <a href="{{ route('delete.owner', ['id' => $hotelownerData->id]) }}" class="btn btn-danger btn-lg show_confirm " onclick="return confirm('Are you sure you want to delete this?');" style="font-size: 1.1rem;"><i class="fas fa-user-times"></i>
+                        <a href="{{ route('delete.owner', ['id' => $hotelownerData->id]) }}" class="btn btn-danger btn-lg show_confirm " onclick="return confirm('Are you sure you want to delete this?');" style="font-size: 1.1rem;">
+
                             Remove</a>
                     </td>
                 </tr>

@@ -10,6 +10,13 @@ use File;
 
 class RoomController extends Controller
 {
+
+    public function listMobile()
+    {
+        $roomData = HotelRooms::all();
+        return response()->json($roomData);
+    }
+
     public function index()
     {
         return view('admin.modules.hotelrooms.index');
@@ -24,7 +31,7 @@ class RoomController extends Controller
     {
         $roomData = new HotelRooms();
         $roomData->fill($request->all());
-         $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
+        $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
         // dd($newThumbnailImageName);
         $request->room_gallery->move('images/hotel/$title', $newThumbnailImageName);
 
@@ -32,7 +39,7 @@ class RoomController extends Controller
 
         $roomData->slug = Str::slug($request->title);
         $roomData->save();
-         return redirect()->back()->with('success', 'New hotel room added successfully');
+        return redirect()->back()->with('success', 'New hotel room added successfully');
     }
     public function list()
     {
