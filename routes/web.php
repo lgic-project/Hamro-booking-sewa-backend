@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 
 //route for hotel owner
-Route::get('/json-owner', [App\Http\Controllers\Admin\HotelController::class, 'listMobile'])->name('employees.list.mob');
+Route::get('/json-owner', [HotelController::class, 'listMobile'])->name('employees.list.mob');
 Route::get('/add', [HotelController::class, 'index'])->name('addowner');
 Route::post('/add', [HotelController::class, 'store'])->name('storeowner');
 Route::get('/listowner', [HotelController::class, 'list'])->name('listowner');
