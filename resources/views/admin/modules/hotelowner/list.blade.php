@@ -15,6 +15,7 @@
                     <th>Title</th>
                     <th>Phone number</th>
                     <th>Email</th>
+                    <th>Rating</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -34,6 +35,7 @@
                     <td>{{ $hotelownerData->title }}</td>
                     <td>{{ $hotelownerData->phone_number }}</td>
                     <td>{{ $hotelownerData->email }}</td>
+                    <td>{{ $hotelownerData->rating }}</td>
                     @if($hotelownerData->owner_status == 'Inactive')
                     <?php $color = 'danger'; ?>
 
