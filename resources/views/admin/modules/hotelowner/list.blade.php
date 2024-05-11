@@ -15,6 +15,7 @@
                     <th>Title</th>
                     <th>Phone number</th>
                     <th>Email</th>
+                    <th>Status</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -33,6 +34,17 @@
                     <td>{{ $hotelownerData->title }}</td>
                     <td>{{ $hotelownerData->phone_number }}</td>
                     <td>{{ $hotelownerData->email }}</td>
+                    @if($hotelownerData->owner_status == 'Inactive')
+                    <?php $color = 'danger'; ?>
+
+                    @else
+                    <?php $color = 'success'; ?>
+                    @endif
+                    <td>
+                        <a href="/owner/verify/{{$hotelownerData->id}}" onclick="return confirmStatusChange('change status')">
+                            <span class="badge badge-{{$color}} rounded-pill d-inline">{{$hotelownerData->owner_status}}</span>
+                        </a>
+                    </td>
                     <td>
                         <a href="{{ route('edit.owner', ['id' => $hotelownerData->id]) }}" class="btn btn-primary btn-lg" style="font-size: 1.1rem;">
                             Edit</a>

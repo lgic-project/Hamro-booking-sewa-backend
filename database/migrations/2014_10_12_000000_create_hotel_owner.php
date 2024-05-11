@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('email');
             $table->string('slug');
+            $table->string('owner_status');
             $table->longText('photos');
             $table->string('location');
             $table->string('rating');

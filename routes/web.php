@@ -27,6 +27,7 @@ Route::get('/json-owner', [HotelController::class, 'listMobile'])->name('employe
 Route::get('/add', [HotelController::class, 'index'])->name('addowner');
 Route::post('/add', [HotelController::class, 'store'])->name('storeowner');
 Route::get('/listowner', [HotelController::class, 'list'])->name('listowner');
+Route::get('/owner/verify/{id}', [HotelController::class, 'verify'])->name('owner.verify');
 Route::get('/deleteowner/{id}', [HotelController::class, 'delete'])->name('delete.owner');
 Route::get('/editowner/{id}', [HotelController::class, 'edit'])->name('edit.owner');
 Route::post('/updateowner/{id}', [HotelController::class, 'update'])->name('update.owner');

@@ -17,6 +17,7 @@ class HotelOwner extends Model
         'phone_number',
         'email',
         'slug',
+        'owner_status',
         'photos',
         'location',
         'rating'

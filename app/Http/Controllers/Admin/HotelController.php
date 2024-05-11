@@ -35,6 +35,8 @@ class HotelController extends Controller
 
         $hotelownerData->photos = $newThumbnailImageName;
 
+        $hotelownerData->owner_status = "Inactive";
+
         $hotelownerData->slug = Str::slug($request->title);
 
         $hotelownerData->save();
@@ -57,6 +59,17 @@ class HotelController extends Controller
         return redirect()->route('listowner')->with('message', 'Data deleted successfully!!');
     }
 
+    //for status
+    public function verify($id)
+    {
+        $record = HotelOwner::findorFail($id);
+        if ($record->owner_status == "Active") {
+            $record->owner_status = 'Inactive';
+        } else $record->owner_status = 'Active';
+        $record->save();
+        return redirect()->route('listowner');
+    }
+
     //for editing
     public function edit($id)
     {
@@ -74,6 +87,7 @@ class HotelController extends Controller
         $hotelownerData->email = $request->owner_email;
         $hotelownerData->location = $request->owner_location;
         $hotelownerData->rating = $request->owner_rating;
+        $hotelownerData->owner_status = $hotelownerData->owner_status;
 
 
         if ($request->has('photos')) {
