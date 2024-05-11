@@ -11,12 +11,12 @@
             <thead>
                 <tr>
                     <th>S.N</th>
-                    <th>Photo</th>
-                    <th>Title</th>
-                    <th>Phone number</th>
-                    <th>Email</th>
-                    <th>Rating</th>
-                    <th>Status</th>
+                    <th>Photo <i class="fa-solid fa-photo-film"></i></th>
+                    <th>Title <i class="fa-solid fa-heading"></i></th>
+                    <th>Phone number <i class="fa-solid fa-phone"></i></th>
+                    <th>Email <i class="fa-solid fa-envelope"></i></th>
+                    <th>Rating <i class="fa-regular fa-star"></i></th>
+                    <th>Status <i class="fa-regular fa-flag"></i></th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -47,12 +47,17 @@
                             <span class="badge badge-{{$color}} rounded-pill d-inline">{{$hotelownerData->owner_status}}</span>
                         </a>
                     </td>
+                    <script>
+                        function confirmStatusChange(a) {
+                            return confirm("Are you sure you want to" + " " + a + "?");
+                        }
+                    </script>
                     <td>
                         <a href="{{ route('edit.owner', ['id' => $hotelownerData->id]) }}" class="btn btn-primary btn-lg" style="font-size: 1.1rem;">
-                            Edit</a>
+                            <i class="fa-solid fa-pen"></i> Edit</a>
                         <a href="{{ route('delete.owner', ['id' => $hotelownerData->id]) }}" class="btn btn-danger btn-lg show_confirm " onclick="return confirm('Are you sure you want to delete this?');" style="font-size: 1.1rem;">
 
-                            Remove</a>
+                            <i class="fa-solid fa-trash"></i> Remove</a>
                     </td>
                 </tr>
                 @php

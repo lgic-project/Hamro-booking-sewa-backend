@@ -16,7 +16,7 @@
                 <div class="page-title-wrapper">
                     <div class="page-title-heading">
                         <div class="page-title-icon">
-                            <i class="fas fa-hotel"></i>
+                            <i class="fa-solid fa-hotel"></i>
                         </div>
                         <div> Hotel Owner
                             <div class="page-title-subheading">Add Hotel
