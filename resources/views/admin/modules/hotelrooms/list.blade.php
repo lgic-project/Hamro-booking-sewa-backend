@@ -16,6 +16,7 @@
                     <th>Price</th>
                     <th>Total Rooms</th>
                     <th>Availability</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,8 +30,9 @@
                         echo $counterVar;
                         @endphp
                     </th>
-                    <th><img src="/images/hotel/room/{{$roomData->room_gallery }}" style="width: 80px; object-fit: cover; height: 80px;"></th>
                     <td>{{ $roomData->title }}</td>
+                    <th><img src="/images/hotel/room/{{$roomData->room_gallery }}" style="width: 80px; object-fit: cover; height: 80px;"></th>
+                    
                     <td>{{ $roomData->price }}</td>
                     <td>{{ $roomData->total_rooms }}</td>
                     <td>{{ $roomData->is_available }}</td>
