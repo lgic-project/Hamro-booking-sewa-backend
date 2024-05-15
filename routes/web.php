@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HotelController;
+use App\Http\Controllers\LocalUsersController;
 use App\Http\Controllers\RoomController;
 use App\Models\HotelOwner;
 use App\Models\HotelRooms;
@@ -20,6 +21,9 @@ use App\Models\HotelRooms;
 Route::get('/', function () {
     return view('admin.modules.index');
 });
+
+//Route for API to handle post requests
+Route::post('/register', [LocalUsersController::class, 'register'])->name('register.localusers');
 
 
 //route for hotel owner
