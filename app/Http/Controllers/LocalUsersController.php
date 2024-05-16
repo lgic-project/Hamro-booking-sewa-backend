@@ -7,25 +7,18 @@ use App\Models\LocalUsers;
 
 class LocalUsersController extends Controller
 {
-    public function register(Request $request)
+
+    public function index()
     {
-        // Create new user
+        return view('admin.modules.localusers.add');
+    }
+
+    //for saving in database
+    public function store(Request $request)
+    {
         $localUsersData = new LocalUsers();
-        $localUsersData->first_name = $request->first_name;
-        $localUsersData->last_name = $request->last_name;
-        $localUsersData->email = $request->email;
-        $localUsersData->password = $request->password;
-        $localUsersData->phone_number = $request->phone_number;
-        if ($localUsersData->save()) {
-            return response()->json([
-                "status" => 200,
-                "message" => "Data saved"
-            ]);
-        } else {
-            return response()->json([
-                "error" => 400,
-                'message' => 'Data not saved',
-            ]);
-        }
+        $localUsersData->fill($request->all());
+        $localUsersData->save();
+        return redirect()->route('index.localusers')->with('success', 'New User Added Successfully');
     }
 }

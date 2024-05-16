@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 
 //Route for API to handle post requests
-Route::post('/register', [LocalUsersController::class, 'register'])->name('register.localusers');
+// Route::post('/register', [LocalUsersController::class, 'register'])->name('register.localusers');
 
 
 //route for hotel owner
@@ -47,3 +47,8 @@ Route::get('/listrooms', [RoomController::class, 'list'])->name('listrooms');
 Route::get('/editrooms/{id}', [RoomController::class, 'edit'])->name('edit.rooms');
 Route::post('/updaterooms/{id}', [RoomController::class, 'update'])->name('update.rooms');
 Route::get('/deleterooms/{id}', [RoomController::class, 'delete'])->name('delete.rooms');
+
+
+//routes for local users
+Route::get('/localusers', [LocalUsersController::class, 'index'])->name('index.localusers');
+Route::post('localusers/add', [LocalUsersController::class, 'store'])->name('store.localusers');
