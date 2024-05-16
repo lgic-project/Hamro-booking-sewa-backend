@@ -108,7 +108,7 @@
                         </div>
                         <div class="form-group">
                             <label>room_gallery</label>
-                            <input type="file" class="form-control" name="room_gallery" placeholder="room_gallery.">
+                            <input type="file" class="form-control" name="room_gallery[] multiple" placeholder="room_gallery">
                         </div>
                         <div class="form-group">
                             <label>Rating </label>
