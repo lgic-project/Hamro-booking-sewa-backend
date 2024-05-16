@@ -31,11 +31,25 @@ class RoomController extends Controller
     {
         $roomData = new HotelRooms();
         $roomData->fill($request->all());
-        $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
-        // dd($newThumbnailImageName);
-        $request->room_gallery->move('images/hotel/room/', $newThumbnailImageName);
 
-        $roomData->room_gallery = $newThumbnailImageName;
+        if($request->has('room_gallery'))
+            {
+                foreach($request->file('room_gallery') as $roomGallery)
+                {
+                    $name=$roomGallery->getClientOriginalName();
+                    $roomGallery->move(public_path('images/hotel/room/'), $name);  
+                    $roomGalleryData[] = $name;
+                }
+            } else{
+                $roomGalleryData = [];
+            }
+        $roomData->room_gallery = json_encode( $roomGalleryData);
+
+        // $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
+        // // dd($newThumbnailImageName);
+        // $request->room_gallery->move('images/hotel/room/', $newThumbnailImageName);
+
+        // $roomData->room_gallery = $newThumbnailImageName;
 
         $roomData->slug = Str::slug($request->title);
         $roomData->save();
