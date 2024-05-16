@@ -119,31 +119,17 @@
                         <i class="fa-solid fa-list-ol"></i> List Rooms
                     </a>
                 </li>
-                <li class="app-sidebar__heading">रोजगारदाता अनुरोध सूची</li>
+                <li class="app-sidebar__heading"><i class="fa-solid fa-users"></i> Local Users</li>
                 <li>
-                    <a href="/employer-request">
-                        <i class="metismenu-icon pe-7s-mouse">
-                        </i>सबै अनुरोध सूची
-                    </a>
-                </li>
-                <li class="app-sidebar__heading">तालीम केन्द्र र सीप परिक्ष्यण केन्द्रहरु</li>
-                <li>
-                    <a href="/listtraininguser">
-                        <i class="metismenu-icon pe-7s-mouse">
-                        </i> तालीम तथा सीप परिक्ष्यण केन्द्रहरु
+                    <a href="/localusers">
+                        <i class="fa-solid fa-user-plus">
+                        </i> Add New User
                     </a>
                 </li>
                 <li>
-                    <a href="/addtraininguser">
-                        <i class="metismenu-icon pe-7s-eyedropper">
-                        </i>नयाँ संस्थाको दर्ता
-                    </a>
-                </li>
-                <li class="app-sidebar__heading">Help Section</li>
-                <li>
-                    <a href="/adminportal/help-data-add">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
-                        Help Center
+                    <a href="/localusers/list">
+                        <i class="fa-solid fa-list-ol">
+                        </i> List Users
                     </a>
                 </li>
             </ul>

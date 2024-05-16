@@ -52,3 +52,5 @@ Route::get('/deleterooms/{id}', [RoomController::class, 'delete'])->name('delete
 //routes for local users
 Route::get('/localusers', [LocalUsersController::class, 'index'])->name('index.localusers');
 Route::post('localusers/add', [LocalUsersController::class, 'store'])->name('store.localusers');
+Route::get('/localusers/list', [LocalUsersController::class, 'list'])->name('list.localusers');
+Route::get('/localusers/delete/{id}', [LocalUsersController::class, 'delete'])->name('delete.localusers');
