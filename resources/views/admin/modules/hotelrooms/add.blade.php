@@ -120,7 +120,7 @@
                         </div>
                         <div class="form-group">
                             <label>Thmbnail</label>
-                            <input type="text" class="form-control" name="room_thumbnail" placeholder="room_thumbnail">
+                            <input type="file" class="form-control" name="room_thumbnail" placeholder="room_thumbnail">
                         </div>
                         
                         <div class="form-group">
