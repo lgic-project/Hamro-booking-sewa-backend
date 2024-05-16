@@ -12,6 +12,7 @@ class HotelOwner extends Model
     protected $table = 'hotel_owner';
 
     protected $fillable = [
+        'hotel_owner_id',
         'title',
         'description',
         'phone_number',

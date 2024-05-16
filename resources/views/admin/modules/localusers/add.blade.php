@@ -97,7 +97,7 @@
                             <input type="email" class="form-control" name="email" placeholder="mail@example.com">
                         </div>
                         <div class="form-group">
-                            <label>Phone Number</label>
+                            <label>Password</label>
                             <input type="password" class="form-control" name="password" placeholder="Password">
                         </div>
                         <div class="form-group">

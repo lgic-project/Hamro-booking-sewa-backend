@@ -12,6 +12,7 @@
                 <tr>
                     <th>S.N</th>
                     <th>Photo <i class="fa-solid fa-photo-film"></i></th>
+                    <th>Owner ID <i class="fa-solid fa-user"></i></th>
                     <th>Title <i class="fa-solid fa-heading"></i></th>
                     <th>Phone number <i class="fa-solid fa-phone"></i></th>
                     <th>Email <i class="fa-solid fa-envelope"></i></th>
@@ -32,6 +33,7 @@
                         @endphp
                     </th>
                     <th><img src="/images/hotel/{{$hotelownerData->photos }}" style="width: 110px; object-fit: cover; height: 100px;"></th>
+                    <td>{{ $hotelownerData->hotel_owner_id }}</td>
                     <td>{{ $hotelownerData->title }}</td>
                     <td>{{ $hotelownerData->phone_number }}</td>
                     <td>{{ $hotelownerData->email }}</td>
