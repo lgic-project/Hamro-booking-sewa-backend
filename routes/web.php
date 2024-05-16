@@ -54,3 +54,5 @@ Route::get('/localusers', [LocalUsersController::class, 'index'])->name('index.l
 Route::post('localusers/add', [LocalUsersController::class, 'store'])->name('store.localusers');
 Route::get('/localusers/list', [LocalUsersController::class, 'list'])->name('list.localusers');
 Route::get('/localusers/delete/{id}', [LocalUsersController::class, 'delete'])->name('delete.localusers');
+Route::get('/localusers/edit/{id}', [LocalUsersController::class, 'edit'])->name('edit.localusers');
+Route::post('/localusers/update/{id}', [LocalUsersController::class, 'update'])->name('update.localusers');

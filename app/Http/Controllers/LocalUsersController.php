@@ -36,4 +36,24 @@ class LocalUsersController extends Controller
         $localUsersData->delete();
         return redirect()->route('list.localusers')->with('message', 'Data deleted successfully!!');
     }
+
+    //for editing
+    public function edit($id)
+    {
+        $localUsersData = LocalUsers::find($id);
+        return view('admin.modules.localusers.update', compact('localUsersData'));
+    }
+
+    //for updating
+    public function update(Request $request, $id)
+    {
+        $localUsersData = LocalUsers::find($id);
+        $localUsersData->first_name = request('first_name');
+        $localUsersData->last_name = request('last_name');
+        $localUsersData->email = request('email');
+        $localUsersData->password = request('password');
+        $localUsersData->phone_number = request('phone_number');
+        $localUsersData->save();
+        return redirect()->route('list.localusers')->with('success', 'Data updated successfully!!');
+    }
 }
