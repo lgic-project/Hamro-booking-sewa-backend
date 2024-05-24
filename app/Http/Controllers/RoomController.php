@@ -106,7 +106,7 @@ class RoomController extends Controller
     }
        public function roomdetail($id)
     {
-        $roomData = HotelRoom::findorFail($id);
-        return view('admin.modules.hotelrooms.roomprofile', compact('roomdata'));
+        $roomData = HotelRooms::findorFail($id);
+        return view('admin.modules.hotelrooms.roomprofile', compact('roomData'));
 }
 }

@@ -9,7 +9,7 @@
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">User</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{$roomdata->title}}</li>
+                        <li class="breadcrumb-item active" aria-current="page">{{$roomData->title}}</li>
                     </ol>
                 </nav>
             </div>
@@ -19,13 +19,13 @@
             <div class="col-lg-4">
                 <div class="card mb-4">
                     <div class="card-body text-center">
-                        <img src="{{ asset('images/hotel/room/' . $roomdata->room_thumbnail) }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                        <h5 class="my-3">{{$roomdata->total_rooms}}</h5>
-                        <p class="text-muted mb-4">{{$roomdata->price}}</p>
+                        <img src="{{ asset('images/hotel/room/' . $roomData->room_thumbnail) }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3">{{$roomData->title}}</h5>
+                        
                         <div class="d-flex justify-content-center mb-2">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resumeModal">
-                                View Resume
-                            </button>
+                        <a href="{{route('listrooms') }}" class="btn btn-primary btn-lg" style="font-size: 1.1rem;"><i class="fas fa-edit"></i>
+                            Go Back</a>
+                    </a>
                             <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
@@ -34,7 +34,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <img src="{{ asset('images/hotel/room/' . $roomdata->room_gallery) }}" alt="Employee cv" class="img-fluid">
+                                            <img src="{{ asset('images/hotel/room/' . $roomData->room_gallery) }}" alt="Employee cv" class="img-fluid">
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -80,28 +80,28 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Full Name</p>
+                                <p class="mb-0">Room Category</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">{{$roomdata->employee_first_name . " " . $roomdata->employee_middle_name . " " . $roomdata->employee_last_name}}</p>
+                                <p class="text-muted mb-0">{{$roomData->title}}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Email</p>
+                                <p class="mb-0">price</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">{{$roomdata->employee_email}}</p>
+                                <p class="text-muted mb-0">{{$roomData->price}}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Phone</p>
+                                <p class="mb-0">Availability</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">{{$roomdata->employee_contact}}</p>
+                                <p class="text-muted mb-0">{{$roomData->is_available}}</p>
                             </div>
                         </div>
                         <hr>
@@ -110,7 +110,7 @@
                                 <p class="mb-0">Address</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">{{$roomdata->employee_address}}</p>
+                                <p class="text-muted mb-0">{{$roomData->employee_address}}</p>
                             </div>
                         </div>
                         <hr>
@@ -118,14 +118,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <h4 style="text-align: center; margin-bottom:2rem;">Employee Description</h4>
+                    <h4 style="text-align: center; margin-bottom:2rem;">Room Description</h4>
                     <div class="card-body col-md-12" style="text-align:justify">
-                        <h5>{{$roomdata->employee_description}}</h5>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit repellat voluptas nobis saepe recusandae soluta nesciunt assumenda veritatis nihil consequatur error harum laborum necessitatibus, odio voluptatem dolor modi rerum nulla!
-                        Voluptatem commodi ipsa quidem maiores cum reprehenderit eveniet hic cumque officia deserunt itaque delectus, culpa eaque et explicabo, exercitationem accusantium labore ipsum blanditiis reiciendis architecto quo cupiditate aspernatur. Ipsum, aliquam!
-                        Cupiditate rem officiis, illo harum quasi quas minus provident nostrum porro asperiores est fuga dolorem aperiam maxime consequuntur accusamus consequatur dolorum sed facere neque voluptas ullam. Sit aspernatur magni aperiam?
-                        Delectus in repudiandae, facilis laudantium culpa ut saepe quas. Architecto ex molestiae omnis, sunt, iusto reiciendis quas, autem at quo veniam ducimus libero amet rerum sint cum esse officiis doloribus?
-                        Obcaecati, voluptatem! Architecto eligendi ullam repellendus facilis vitae eos alias dolores ex eum, voluptas quibusdam nisi sint suscipit, nam qui ipsam ea earum ducimus fugiat cumque consequuntur reprehenderit quasi odio.
+                        <h5>{{$roomData->description}}</h5>
+                        
                     </div>
                 </div>
             </div>
