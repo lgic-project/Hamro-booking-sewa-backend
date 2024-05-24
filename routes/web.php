@@ -47,7 +47,7 @@ Route::get('/listrooms', [RoomController::class, 'list'])->name('listrooms');
 Route::get('/editrooms/{id}', [RoomController::class, 'edit'])->name('edit.rooms');
 Route::post('/updaterooms/{id}', [RoomController::class, 'update'])->name('update.rooms');
 Route::get('/deleterooms/{id}', [RoomController::class, 'delete'])->name('delete.rooms');
-
+Route::get('/roomdetail/{id}', [RoomController::class, 'roomdetail'])->name('roomdetail.rooms');
 
 //routes for local users
 Route::get('/localusers', [LocalUsersController::class, 'index'])->name('index.localusers');
