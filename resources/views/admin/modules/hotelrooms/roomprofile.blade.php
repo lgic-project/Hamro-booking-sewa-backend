@@ -9,7 +9,7 @@
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">User</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{$employeeData->employee_first_name}}</li>
+                        <li class="breadcrumb-item active" aria-current="page">{{$roomdata->title}}</li>
                     </ol>
                 </nav>
             </div>
@@ -19,9 +19,9 @@
             <div class="col-lg-4">
                 <div class="card mb-4">
                     <div class="card-body text-center">
-                        <img src="{{ asset('images/employee/profile/' . $employeeData->employee_image) }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                        <h5 class="my-3">{{$employeeData->employee_first_name}}</h5>
-                        <p class="text-muted mb-4">{{$employeeData->employee_address}}</p>
+                        <img src="{{ asset('images/hotel/room/' . $roomdata->room_thumbnail) }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3">{{$roomdata->total_rooms}}</h5>
+                        <p class="text-muted mb-4">{{$roomdata->price}}</p>
                         <div class="d-flex justify-content-center mb-2">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resumeModal">
                                 View Resume
@@ -34,7 +34,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <img src="{{ asset('images/employee/cv/' . $employeeData->employee_cv) }}" alt="Employee cv" class="img-fluid">
+                                            <img src="{{ asset('images/hotel/room/' . $roomdata->room_gallery) }}" alt="Employee cv" class="img-fluid">
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -44,7 +44,7 @@
                             </div>
 
 
-                            <a href="/employee/verification/{{$employeeData->id}}"> <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary ms-1">{{$employeeData->employee_status}}</button></a>
+                           
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                                 <p class="mb-0">Full Name</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">{{$employeeData->employee_first_name . " " . $employeeData->employee_middle_name . " " . $employeeData->employee_last_name}}</p>
+                                <p class="text-muted mb-0">{{$roomdata->employee_first_name . " " . $roomdata->employee_middle_name . " " . $roomdata->employee_last_name}}</p>
                             </div>
                         </div>
                         <hr>
@@ -92,7 +92,7 @@
                                 <p class="mb-0">Email</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">{{$employeeData->employee_email}}</p>
+                                <p class="text-muted mb-0">{{$roomdata->employee_email}}</p>
                             </div>
                         </div>
                         <hr>
@@ -101,7 +101,7 @@
                                 <p class="mb-0">Phone</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">{{$employeeData->employee_contact}}</p>
+                                <p class="text-muted mb-0">{{$roomdata->employee_contact}}</p>
                             </div>
                         </div>
                         <hr>
@@ -110,7 +110,7 @@
                                 <p class="mb-0">Address</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">{{$employeeData->employee_address}}</p>
+                                <p class="text-muted mb-0">{{$roomdata->employee_address}}</p>
                             </div>
                         </div>
                         <hr>
@@ -120,7 +120,7 @@
                 <div class="row">
                     <h4 style="text-align: center; margin-bottom:2rem;">Employee Description</h4>
                     <div class="card-body col-md-12" style="text-align:justify">
-                        <h5>{{$employeeData->employee_description}}</h5>
+                        <h5>{{$roomdata->employee_description}}</h5>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit repellat voluptas nobis saepe recusandae soluta nesciunt assumenda veritatis nihil consequatur error harum laborum necessitatibus, odio voluptatem dolor modi rerum nulla!
                         Voluptatem commodi ipsa quidem maiores cum reprehenderit eveniet hic cumque officia deserunt itaque delectus, culpa eaque et explicabo, exercitationem accusantium labore ipsum blanditiis reiciendis architecto quo cupiditate aspernatur. Ipsum, aliquam!
                         Cupiditate rem officiis, illo harum quasi quas minus provident nostrum porro asperiores est fuga dolorem aperiam maxime consequuntur accusamus consequatur dolorum sed facere neque voluptas ullam. Sit aspernatur magni aperiam?
