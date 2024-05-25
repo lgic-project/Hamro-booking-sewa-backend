@@ -104,4 +104,9 @@ class RoomController extends Controller
         $roomData->delete();
         return redirect()->route('listrooms')->with('message', 'Data deleted successfully!!');
     }
+       public function roomdetail($id)
+    {
+        $roomData = HotelRooms::findorFail($id);
+        return view('admin.modules.hotelrooms.roomprofile', compact('roomData'));
+}
 }

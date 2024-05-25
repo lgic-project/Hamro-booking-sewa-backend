@@ -95,7 +95,7 @@
                             <input type="text" class="form-control" name="title" placeholder="Room Category">
                          </div>
                          <div class="form-group ">
-                            <label>Hote id</label>
+                            <label>Hotel id</label>
                             <input type="text" class="form-control" name="hotel_owner_id" placeholder="Hotel id">
                         </div>
                         <div class="form-group ">
