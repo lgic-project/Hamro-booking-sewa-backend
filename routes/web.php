@@ -25,6 +25,8 @@ Route::get('/', function () {
 //Route for API to handle post requests
 // Route::post('/register', [LocalUsersController::class, 'register'])->name('register.localusers');
 
+//api for csrf token
+Route::get('/csrf-token', [LocalUsersController::class, 'getToken'])->name('csrf.token');
 
 //route for hotel owner
 Route::get('/json-owner', [HotelController::class, 'listMobile'])->name('list.mob');
@@ -39,7 +41,7 @@ Route::post('/updateowner/{id}', [HotelController::class, 'update'])->name('upda
 
 
 //routes for hotel rooms
-Route::get('/json', [RoomController::class, 'listMobile'])->name('list.mobile');
+Route::get('/json-room', [RoomController::class, 'listMobile'])->name('list.mobile');
 Route::get('/rooms', [RoomController::class, 'index'])->name('Addrooms');
 Route::get('/createrooms', [RoomController::class, 'display'])->name('display.room.form');
 Route::post('/createrooms', [RoomController::class, 'create'])->name('createrooms');
@@ -51,7 +53,7 @@ Route::get('/roomdetail/{id}', [RoomController::class, 'roomdetail'])->name('roo
 
 //routes for local users
 Route::get('/localusers', [LocalUsersController::class, 'index'])->name('index.localusers');
-Route::post('localusers/add', [LocalUsersController::class, 'store'])->name('store.localusers');
+Route::post('/localusers/add', [LocalUsersController::class, 'store'])->name('store.localusers');
 Route::get('/localusers/list', [LocalUsersController::class, 'list'])->name('list.localusers');
 Route::get('/localusers/delete/{id}', [LocalUsersController::class, 'delete'])->name('delete.localusers');
 Route::get('/localusers/edit/{id}', [LocalUsersController::class, 'edit'])->name('edit.localusers');

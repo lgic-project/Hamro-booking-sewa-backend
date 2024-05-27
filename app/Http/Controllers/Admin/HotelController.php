@@ -11,6 +11,7 @@ use File;
 class HotelController extends Controller
 {
 
+
     //for data to display in mobile format:
     public function listMobile()
     {

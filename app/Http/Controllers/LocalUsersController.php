@@ -16,10 +16,23 @@ class LocalUsersController extends Controller
     //for saving in database
     public function store(Request $request)
     {
+        $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|email|unique:local_users|max:255',
+            'password' => 'required|string|min:8',
+            'phone_number' => 'required|string|max:15',
+        ]);
+
         $localUsersData = new LocalUsers();
-        $localUsersData->fill($request->all());
+        $localUsersData->first_name = $request->input('first_name');
+        $localUsersData->last_name = $request->input('last_name');
+        $localUsersData->email = $request->input('email');
+        $localUsersData->password = $request->input('password');
+        $localUsersData->phone_number = $request->input('phone_number');
         $localUsersData->save();
-        return redirect()->route('index.localusers')->with('success', 'New User Added Successfully');
+
+        return response()->json(['message' => 'User registered successfully', 'localUsersData' => $localUsersData]);
     }
 
     //for listing
@@ -55,5 +68,11 @@ class LocalUsersController extends Controller
         $localUsersData->phone_number = request('phone_number');
         $localUsersData->save();
         return redirect()->route('list.localusers')->with('success', 'Data updated successfully!!');
+    }
+
+    //for csrf tokens:
+    public function getToken(Request $request)
+    {
+        return response()->json(['csrfToken' => csrf_token()]);
     }
 }
