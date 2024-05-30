@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You for Using Our Hotel Booking App</title>
+    <title>Thank You for Using Hamro Booking Sewa</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,7 +42,7 @@
 <body>
 
 <div class="container">
-    <h1>Thank You for Using Our Booking Sewa</h1>
+    <h1>Thank You for Using Hamro Booking Sewa</h1>
     <p>We hope you had a great experience :)</p>
     <a href="index.php" class="btn">Return to Home Page</a>
 </div>
