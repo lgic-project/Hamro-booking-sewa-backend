@@ -120,7 +120,7 @@
                 <div class="row">
                     <h4 style="text-align: center; margin-bottom:2rem;">Room Description</h4>
                     <div class="card-body col-md-12" style="text-align:justify">
-                        <h5>{{$roomData->description}}</h5>
+                        <h5>{!!$roomData->description!!}</h5>
                         
                     </div>
                 </div>
