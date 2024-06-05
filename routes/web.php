@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HotelController;
 use App\Http\Controllers\LocalUsersController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\App\
 use App\Models\HotelOwner;
 use App\Models\HotelRooms;
 
@@ -40,7 +41,7 @@ Route::post('/updateowner/{id}', [HotelController::class, 'update'])->name('upda
 
 
 
-//routes for hotel rooms
+//routes for hotel rooms for superadmin
 Route::get('/json-room', [RoomController::class, 'listMobile'])->name('list.mobile');
 Route::get('/rooms', [RoomController::class, 'index'])->name('Addrooms');
 Route::get('/createrooms', [RoomController::class, 'display'])->name('display.room.form');
@@ -51,6 +52,17 @@ Route::post('/updaterooms/{id}', [RoomController::class, 'update'])->name('updat
 Route::get('/deleterooms/{id}', [RoomController::class, 'delete'])->name('delete.rooms');
 Route::get('/roomdetail/{id}', [RoomController::class, 'roomdetail'])->name('roomdetail.rooms');
 
+//routes for hotel rooms for hotelowners
+Route::get('/hotel/json-room', [RoomController::class, 'listMobile'])->name('list.app.mobile');
+Route::get('/hotel/rooms', [RoomController::class, 'index'])->name('app.Addrooms');
+Route::get('/hotel/createrooms', [RoomController::class, 'display'])->name('display.app.room.form');
+Route::post('/hotel/createrooms', [RoomController::class, 'create'])->name('createrooms');
+Route::get('/hotel/listrooms', [RoomController::class, 'list'])->name('app.listrooms');
+Route::get('/hotel/editrooms/{id}', [RoomController::class, 'edit'])->name('edit.rooms');
+Route::post('/hotel/updaterooms/{id}', [RoomController::class, 'update'])->name('update.rooms');
+Route::get('/hotel/deleterooms/{id}', [RoomController::class, 'delete'])->name('delete.rooms');
+Route::get('/hotel/roomdetail/{id}', [RoomController::class, 'roomdetail'])->name('roomdetail.rooms');
+
 //routes for local users
 Route::get('/localusers', [LocalUsersController::class, 'index'])->name('index.localusers');
 Route::post('/localusers/add', [LocalUsersController::class, 'store'])->name('store.localusers');
@@ -58,3 +70,13 @@ Route::get('/localusers/list', [LocalUsersController::class, 'list'])->name('lis
 Route::get('/localusers/delete/{id}', [LocalUsersController::class, 'delete'])->name('delete.localusers');
 Route::get('/localusers/edit/{id}', [LocalUsersController::class, 'edit'])->name('edit.localusers');
 Route::post('/localusers/update/{id}', [LocalUsersController::class, 'update'])->name('update.localusers');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//route for hotel dashboard
+
+Route::get('/hotelsection', function () {
+    return view('hotel.modules.index');
+});
