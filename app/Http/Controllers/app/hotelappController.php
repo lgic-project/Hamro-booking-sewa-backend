@@ -24,7 +24,7 @@ class RoomController extends Controller
 
     public function appdisplay()
     {
-        return view('admin.modules.hotelrooms.add');
+        return view('app.hotelrooms.add');
     }
 
     public function appcreate(Request $request)
@@ -69,7 +69,7 @@ class RoomController extends Controller
     public function appedit($id)
     {
         $roomData = HotelRooms::find($id);
-        return view('admin.modules.hotelrooms.update', compact('roomData'));
+        return view('app.hotelrooms.update', compact('roomData'));
     }
     public function appupdate(Request $request, $id)
     {
@@ -96,13 +96,13 @@ class RoomController extends Controller
             $roomData->room_thumbnail = $newThumbnailImageName;
         }
         $roomData->save();
-        return redirect()->route('listrooms')->with('success', 'Data updated successfully!!');
+        return redirect()->route('app.listrooms')->with('success', 'Data updated successfully!!');
     }
     public function appdelete($id)
     {
         $roomData = HotelRooms::find($id);
         $roomData->delete();
-        return redirect()->route('listrooms')->with('message', 'Data deleted successfully!!');
+        return redirect()->route('app.listrooms')->with('message', 'Data deleted successfully!!');
     }
        public function approomdetail($id)
     {

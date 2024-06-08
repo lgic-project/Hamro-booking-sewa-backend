@@ -46,7 +46,7 @@ Route::get('/json-room', [hotelappController::class, 'applistMobile'])->name('li
 Route::get('/rooms', [hotelappController::class, 'appindex'])->name('Addrooms');
 Route::get('/createrooms', [hotelappController::class, 'appdisplay'])->name('display.room.form');
 Route::post('/createrooms', [hotelappController::class, 'appcreate'])->name('createrooms');
-Route::get('/listrooms', [hotelappController::class, 'applist'])->name('listrooms');
+Route::get('/listrooms', [hotelappController::class, 'applist'])->name('app.listrooms');
 Route::get('/editrooms/{id}', [hotelappController::class, 'appedit'])->name('edit.rooms');
 Route::post('/updaterooms/{id}', [hotelappController::class, 'appupdate'])->name('update.rooms');
 Route::get('/deleterooms/{id}', [hotelappController::class, 'appdelete'])->name('delete.rooms');
