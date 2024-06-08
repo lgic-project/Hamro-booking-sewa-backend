@@ -11,23 +11,23 @@ use File;
 class RoomController extends Controller
 {
 
-    public function listMobile()
+    public function applistMobile()
     {
         $roomData = HotelRooms::all();
         return response()->json($roomData);
     }
 
-    public function index()
+    public function appindex()
     {
-        return view('admin.modules.hotelrooms.index');
+        return view('app.hotelrooms.index');
     }
 
-    public function display()
+    public function appdisplay()
     {
         return view('admin.modules.hotelrooms.add');
     }
 
-    public function create(Request $request)
+    public function appcreate(Request $request)
     {
         $roomData = new HotelRooms();
         $roomData->fill($request->all());
@@ -61,17 +61,17 @@ class RoomController extends Controller
         $roomData->save();
         return redirect()->back()->with('success', 'New hotel room added successfully');
     }
-    public function list()
+    public function applist()
     {
         $roomData = HotelRooms::all();
-        return view('admin.modules.hotelrooms.list', compact('roomData'));
+        return view('app.hotelrooms.list', compact('roomData'));
     }
-    public function edit($id)
+    public function appedit($id)
     {
         $roomData = HotelRooms::find($id);
         return view('admin.modules.hotelrooms.update', compact('roomData'));
     }
-    public function update(Request $request, $id)
+    public function appupdate(Request $request, $id)
     {
         $roomData = HotelRooms::find($id);
         $roomData->title = $request->title;
@@ -98,13 +98,13 @@ class RoomController extends Controller
         $roomData->save();
         return redirect()->route('listrooms')->with('success', 'Data updated successfully!!');
     }
-    public function delete($id)
+    public function appdelete($id)
     {
         $roomData = HotelRooms::find($id);
         $roomData->delete();
         return redirect()->route('listrooms')->with('message', 'Data deleted successfully!!');
     }
-       public function roomdetail($id)
+       public function approomdetail($id)
     {
         $roomData = HotelRooms::findorFail($id);
         return view('app.hotelrooms.roomprofile', compact('roomData'));
