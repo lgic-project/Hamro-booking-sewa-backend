@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HotelController;
 use App\Http\Controllers\LocalUsersController;
 use App\Http\Controllers\RoomController;
-use App\Http\Controllers\App\
+use App\Http\Controllers\App\hotelappController;
 use App\Models\HotelOwner;
 use App\Models\HotelRooms;
 
@@ -42,15 +42,15 @@ Route::post('/updateowner/{id}', [HotelController::class, 'update'])->name('upda
 
 
 //routes for hotel rooms for superadmin
-Route::get('/json-room', [RoomController::class, 'listMobile'])->name('list.mobile');
-Route::get('/rooms', [RoomController::class, 'index'])->name('Addrooms');
-Route::get('/createrooms', [RoomController::class, 'display'])->name('display.room.form');
-Route::post('/createrooms', [RoomController::class, 'create'])->name('createrooms');
-Route::get('/listrooms', [RoomController::class, 'list'])->name('listrooms');
-Route::get('/editrooms/{id}', [RoomController::class, 'edit'])->name('edit.rooms');
-Route::post('/updaterooms/{id}', [RoomController::class, 'update'])->name('update.rooms');
-Route::get('/deleterooms/{id}', [RoomController::class, 'delete'])->name('delete.rooms');
-Route::get('/roomdetail/{id}', [RoomController::class, 'roomdetail'])->name('roomdetail.rooms');
+Route::get('/json-room', [hotelappController::class, 'applistMobile'])->name('list.mobile');
+Route::get('/rooms', [hotelappController::class, 'appindex'])->name('Addrooms');
+Route::get('/createrooms', [hotelappController::class, 'appdisplay'])->name('display.room.form');
+Route::post('/createrooms', [hotelappController::class, 'appcreate'])->name('createrooms');
+Route::get('/listrooms', [hotelappController::class, 'applist'])->name('listrooms');
+Route::get('/editrooms/{id}', [hotelappController::class, 'appedit'])->name('edit.rooms');
+Route::post('/updaterooms/{id}', [hotelappController::class, 'appupdate'])->name('update.rooms');
+Route::get('/deleterooms/{id}', [hotelappController::class, 'appdelete'])->name('delete.rooms');
+Route::get('/roomdetail/{id}', [hotelappController::class, 'approomdetail'])->name('roomdetail.rooms');
 
 //routes for hotel rooms for hotelowners
 Route::get('/hotel/json-room', [RoomController::class, 'listMobile'])->name('list.app.mobile');

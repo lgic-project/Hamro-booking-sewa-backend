@@ -3,7 +3,7 @@
 @section('content')
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
 <div class="app-main">
-    @include('admin.partials._nav')
+    @include('app.partials._nav')
 
     <div class="app-main__outer">
 
