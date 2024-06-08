@@ -1,9 +1,9 @@
-@extends('admin.master')
+@extends('app.master')
 
 @section('content')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <div class="app-main">
-    @include('admin.partials._nav')
+    @include('app.partials._nav')
     <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
     <style>
         .ck-editor__editable_inline {
@@ -88,7 +88,7 @@
                     </div>
                     @endif
                     <h2> Add Hotel </h2>
-                    <form method="post" action="/createrooms" enctype="multipart/form-data">
+                    <form method="post" action="/hotel/createrooms'" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ">
                             <label>Room category</label>
