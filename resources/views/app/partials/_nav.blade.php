@@ -91,14 +91,45 @@
     <div class="scrollbar-sidebar">
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
-
+                <li class="app-sidebar__heading"><i class="fa-solid fa-hotel"></i> Hotel Section</li>
+                <li>
+                    <a href="{{ route('addowner') }}" class="">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Add Hotel
+                    </a>
+                    <a href="{{ route('listowner') }}" class="">
+                        <i class="fa-solid fa-users-between-lines"></i>
+                        List Hotels
+                    </a>
+                    <!-- <a href="{{ route('listowner') }}">
+                        <i class=" metismenu-icon pe-7s-display2"></i>
+                        List Hotels
+                    </a> -->
+                    <!-- <a href="/report">
+                        <i class="metismenu-icon pe-7s-display2"></i>
+                        रिपोर्ट हेर्नुहोस
+                    </a> -->
+                </li>
                 <li class="app-sidebar__heading"><i class="fa-solid fa-bed"></i> Room Section</li>
                 <li>
-                    <a href="{{ route('display.app.room.form') }}">
+                    <a href="{{ route('display.room.form') }}">
                         <i class="fa-solid fa-door-open"></i> Add Rooms
                     </a>
-                    <a href="{{ route('app.listrooms') }}">
+                    <a href="{{ route('listrooms') }}">
                         <i class="fa-solid fa-list-ol"></i> List Rooms
+                    </a>
+                </li>
+                <li class="app-sidebar__heading"><i class="fa-solid fa-users"></i> Local Users</li>
+                <li>
+                    <a href="/localusers">
+                        <i class="fa-solid fa-user-plus">
+                        </i> Add New User
+                    </a>
+                </li>
+                <li>
+                    <a href="/localusers/list">
+                        <i class="fa-solid fa-list-ol">
+                        </i> List Users
                     </a>
                 </li>
             </ul>
