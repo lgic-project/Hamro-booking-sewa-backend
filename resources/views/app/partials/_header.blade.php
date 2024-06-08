@@ -50,7 +50,7 @@
                             <div class="widget-content-left">
                                 <div class="btn-group">
                                     <h4 style="color:white !important; font-size:1.3rem !important;">Logged as:
-                                        Admin
+                                        Hotel
                                     </h4>
                                 </div>
                             </div>

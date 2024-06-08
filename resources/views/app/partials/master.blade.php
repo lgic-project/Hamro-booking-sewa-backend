@@ -16,11 +16,11 @@
 </head>
 
 <body>
-  @include('admin.partials._header')
+  @include('app.partials._header')
 
 
   @yield('content')
-  @include('admin.partials._footer')
+  @include('app.partials._footer')
   <script src="{{ URL::asset('js/architect.js') }}"></script>
 
 </body>
