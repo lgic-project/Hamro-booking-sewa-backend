@@ -43,14 +43,14 @@ Route::post('/updateowner/{id}', [HotelController::class, 'update'])->name('upda
 
 //routes for hotel rooms for superadmin
 Route::get('/json-room', [hotelappController::class, 'applistMobile'])->name('list.mobile');
-Route::get('/rooms', [hotelappController::class, 'appindex'])->name('Addrooms');
-Route::get('/createrooms', [hotelappController::class, 'appdisplay'])->name('display.app.room.form');
-Route::post('/createrooms', [hotelappController::class, 'appcreate'])->name('createrooms');
-Route::get('/listrooms', [hotelappController::class, 'applist'])->name('app.listrooms');
-Route::get('/editrooms/{id}', [hotelappController::class, 'appedit'])->name('edit.rooms');
-Route::post('/updaterooms/{id}', [hotelappController::class, 'appupdate'])->name('update.rooms');
-Route::get('/deleterooms/{id}', [hotelappController::class, 'appdelete'])->name('delete.rooms');
-Route::get('/roomdetail/{id}', [hotelappController::class, 'approomdetail'])->name('roomdetail.rooms');
+Route::get('/hotel/rooms', [hotelappController::class, 'appindex'])->name('Addrooms');
+Route::get('/hotel/createrooms', [hotelappController::class, 'appdisplay'])->name('display.app.room.form');
+Route::post('/hotel/createrooms', [hotelappController::class, 'appcreate'])->name('createrooms');
+Route::get('/hotel/listrooms', [hotelappController::class, 'applist'])->name('app.listrooms');
+Route::get('/hotel//editrooms/{id}', [hotelappController::class, 'appedit'])->name('edit.rooms');
+Route::post('/hotel/updaterooms/{id}', [hotelappController::class, 'appupdate'])->name('update.rooms');
+Route::get('/hotel/deleterooms/{id}', [hotelappController::class, 'appdelete'])->name('delete.rooms');
+Route::get('/hotel/roomdetail/{id}', [hotelappController::class, 'approomdetail'])->name('roomdetail.rooms');
 
 //routes for hotel rooms for hotelowners
 Route::get('/json-room', [RoomController::class, 'listMobile'])->name('list.app.mobile');

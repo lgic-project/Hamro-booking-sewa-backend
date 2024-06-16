@@ -95,7 +95,7 @@
                 
                 <li class="app-sidebar__heading"><i class="fa-solid fa-bed"></i> Room Section</li>
                 <li>
-                    <a href="{{ route('display.app.room.form'') }}">
+                    <a href="{{ route('display.app.room.form') }}">
                         <i class="fa-solid fa-door-open"></i> Add Rooms
                     </a>
                     <a href="{{ route('app.listrooms') }}">
