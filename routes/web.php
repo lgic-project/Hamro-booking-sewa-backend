@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HotelController;
 use App\Http\Controllers\LocalUsersController;
 use App\Http\Controllers\RoomController;
-use App\Http\Controllers\App\hotelappController;
+use App\Http\Controllers\app\hotelappController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Models\HotelOwner;
 use App\Models\HotelRooms;
 
@@ -74,6 +75,7 @@ Route::post('/localusers/update/{id}', [LocalUsersController::class, 'update'])-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'create'])->name('user.register');
 
 //route for hotel dashboard
 

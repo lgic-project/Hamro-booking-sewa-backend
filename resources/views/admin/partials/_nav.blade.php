@@ -115,7 +115,7 @@
                     <a href="{{ route('display.room.form') }}">
                         <i class="fa-solid fa-door-open"></i> Add Rooms
                     </a>
-                    <a href="{{ route('listrooms') }}">
+                    <a href="{{ route('app.listrooms') }}">
                         <i class="fa-solid fa-list-ol"></i> List Rooms
                     </a>
                 </li>
