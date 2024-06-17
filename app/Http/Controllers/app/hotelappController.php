@@ -1,16 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+namespace App\Http\Controllers\app;
 use App\Models\HotelRooms;
-use Illuminate\Support\Str;
-use File;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-
-class RoomController extends Controller
+class hotelappController extends Controller
 {
-
     public function applistMobile()
     {
         $roomData = HotelRooms::all();
@@ -108,5 +104,5 @@ class RoomController extends Controller
     {
         $roomData = HotelRooms::findorFail($id);
         return view('app.hotelrooms.roomprofile', compact('roomData'));
-}
+    }
 }
