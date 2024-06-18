@@ -30,7 +30,7 @@ Route::get('/', function () {
 //api for csrf token
 Route::get('/csrf-token', [LocalUsersController::class, 'getToken'])->name('csrf.token');
 
-//route for hotel owner
+//route for super-admin
 Route::get('/json-owner', [HotelController::class, 'listMobile'])->name('list.mob');
 Route::get('/add', [HotelController::class, 'index'])->name('addowner');
 Route::post('/add', [HotelController::class, 'store'])->name('storeowner');
@@ -42,7 +42,7 @@ Route::post('/updateowner/{id}', [HotelController::class, 'update'])->name('upda
 
 
 
-//routes for hotel rooms for superadmin
+//routes for owners of hotel
 Route::get('/json-room', [hotelappController::class, 'applistMobile'])->name('list.mobile');
 Route::get('/hotel/rooms', [hotelappController::class, 'appindex'])->name('Addrooms');
 Route::get('/hotel/createrooms', [hotelappController::class, 'appdisplay'])->name('display.app.room.form');
