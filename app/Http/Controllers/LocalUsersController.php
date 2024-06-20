@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\LocalUsers;
+use App\Models\User;
 
 class LocalUsersController extends Controller
 {
@@ -17,16 +17,15 @@ class LocalUsersController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'email' => 'required|email|unique:local_users|max:255',
             'password' => 'required|string|min:8',
             'phone_number' => 'required|string|max:15',
         ]);
 
-        $localUsersData = new LocalUsers();
-        $localUsersData->first_name = $request->input('first_name');
-        $localUsersData->last_name = $request->input('last_name');
+        $localUsersData = new User();
+        $localUsersData->name = $request->input('name');
+        $localUsersData->category = $request->input('category');
         $localUsersData->email = $request->input('email');
         $localUsersData->password = $request->input('password');
         $localUsersData->phone_number = $request->input('phone_number');

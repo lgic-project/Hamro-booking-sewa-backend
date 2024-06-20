@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HotelController;
 use App\Http\Controllers\LocalUsersController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\app\hotelappController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Models\HotelOwner;
 use App\Models\HotelRooms;
+use GuzzleHttp\Psr7\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +23,16 @@ use App\Models\HotelRooms;
 */
 
 Route::get('/', function () {
-    return view('admin.modules.index');
+    return view('welcome');
 });
+
+Route::group(['middleware' => 'auth'], function () {
+});
+
+// route for mobile app
+Route::get('/json-owner', [HotelController::class, 'listMobile'])->name('list.mob');
+Route::get('/json-room', [hotelappController::class, 'applistMobile'])->name('list.mobile');
+
 
 //Route for API to handle post requests
 // Route::post('/register', [LocalUsersController::class, 'register'])->name('register.localusers');
@@ -31,7 +41,6 @@ Route::get('/', function () {
 Route::get('/csrf-token', [LocalUsersController::class, 'getToken'])->name('csrf.token');
 
 //route for super-admin
-Route::get('/json-owner', [HotelController::class, 'listMobile'])->name('list.mob');
 Route::get('/add', [HotelController::class, 'index'])->name('addowner');
 Route::post('/add', [HotelController::class, 'store'])->name('storeowner');
 Route::get('/listowner', [HotelController::class, 'list'])->name('listowner');
@@ -43,7 +52,6 @@ Route::post('/updateowner/{id}', [HotelController::class, 'update'])->name('upda
 
 
 //routes for owners of hotel
-Route::get('/json-room', [hotelappController::class, 'applistMobile'])->name('list.mobile');
 Route::get('/hotel/rooms', [hotelappController::class, 'appindex'])->name('Addrooms');
 Route::get('/hotel/createrooms', [hotelappController::class, 'appdisplay'])->name('display.app.room.form');
 Route::post('/hotel/createrooms', [hotelappController::class, 'appcreate'])->name('createrooms');
@@ -75,10 +83,17 @@ Route::post('/localusers/update/{id}', [LocalUsersController::class, 'update'])-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'create'])->name('user.register');
 
 //route for hotel dashboard
 
 Route::get('/hotelsection', function () {
     return view('hotel.modules.index');
 });
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('/doRegister', function (Request $req) {
+    return response()->json($req);
+});
+
+Route::post('/registerUser/add', [LocalUsersController::class, 'store'])->name('store.register.user');

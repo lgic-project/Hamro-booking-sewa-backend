@@ -93,10 +93,10 @@
                         <div class="form-group ">
                             <label>Room category</label>
                             <input type="text" class="form-control" name="title" placeholder="Room Category">
-                         </div>
-                         <div class="form-group ">
+                        </div>
+                        <div class="form-group ">
                             <label>Hotel id</label>
-                            <input type="text" class="form-control" name="hotel_owner_id" placeholder="Hotel id">
+                            <input type="text" class="form-control" name="hotel_owner_id" placeholder="Hotel id" value="{{ auth()->user()->id }}">
                         </div>
                         <div class="form-group ">
                             <label>Price</label>
@@ -122,7 +122,7 @@
                             <label>Thmbnail</label>
                             <input type="file" class="form-control" name="room_thumbnail" placeholder="room_thumbnail">
                         </div>
-                        
+
                         <div class="form-group">
                             <label>Description</label>
                             <textarea id="descriptionEditor" class="form-control" name="description"></textarea>
