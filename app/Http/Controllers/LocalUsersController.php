@@ -37,14 +37,14 @@ class LocalUsersController extends Controller
     //for listing
     public function list()
     {
-        $localUsersData = LocalUsers::all();
+        $localUsersData = User::all();
         return view('admin.modules.localusers.list', compact('localUsersData'));
     }
 
     //for deleting
     public function delete($id)
     {
-        $localUsersData = LocalUsers::find($id);
+        $localUsersData = User::find($id);
         $localUsersData->delete();
         return redirect()->route('list.localusers')->with('message', 'Data deleted successfully!!');
     }
@@ -52,16 +52,16 @@ class LocalUsersController extends Controller
     //for editing
     public function edit($id)
     {
-        $localUsersData = LocalUsers::find($id);
+        $localUsersData = User::find($id);
         return view('admin.modules.localusers.update', compact('localUsersData'));
     }
 
     //for updating
     public function update(Request $request, $id)
     {
-        $localUsersData = LocalUsers::find($id);
-        $localUsersData->first_name = request('first_name');
-        $localUsersData->last_name = request('last_name');
+        $localUsersData = User::find($id);
+        $localUsersData->name = request('name');
+        // $localUsersData->last_name = request('last_name');
         $localUsersData->email = request('email');
         $localUsersData->password = request('password');
         $localUsersData->phone_number = request('phone_number');

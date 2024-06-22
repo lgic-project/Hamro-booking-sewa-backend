@@ -14,10 +14,9 @@
             <thead>
                 <tr>
                     <th>S.N</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Full Name</th>
                     <th>Email</th>
-                    <th>Password</th>
+                    <th>Category</th>
                     <th>Phone Number</th>
                     <th>Action</th>
                 </tr>
@@ -33,10 +32,9 @@
                         echo $counterVar;
                         @endphp
                     </th>
-                    <td>{{ $localUsersData ->first_name }}</td>
-                    <td>{{ $localUsersData ->last_name }}</td>
+                    <td>{{ $localUsersData ->name }}</td>
                     <td>{{ $localUsersData ->email }}</td>
-                    <td>{{ $localUsersData ->password }}</td>
+                    <td>{{ $localUsersData ->category }}</td>
                     <td>{{ $localUsersData ->phone_number }}</td>
                     <td>
                         <a href="{{ route('edit.localusers', ['id' => $localUsersData->id]) }}" class="btn btn-primary btn-lg" style="font-size: 1.1rem;"><i class="fas fa-edit"></i>

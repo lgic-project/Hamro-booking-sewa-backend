@@ -21,10 +21,10 @@
                             @csrf
                             <div class="row">
 
-                                <div class="position-relative form-group col-6"><label for="first-name" class="">First Name</label><input name="first_name" id="first_name" value="{{$localUsersData->first_name}}" placeholder="first-name" type="text" class="form-control" value="{{ $localUsersData->first_name }}" wfd-id="id4">
+                                <div class="position-relative form-group col-6"><label for="name" class="">Full Name</label><input name="name" id="name" value="{{$localUsersData->name}}" placeholder="full-name" type="text" class="form-control" value="{{ $localUsersData->name }}" wfd-id="id4">
                                 </div>
 
-                                <div class="position-relative form-group col-6"><label for="last-name" class="">Last Name</label><input name="last_name" id="last_name" value="{{$localUsersData->last_name}}" placeholder="last-name" type="text" class="form-control" value="{{ $localUsersData->last_name }}" wfd-id="id4">
+                                <div class="position-relative form-group col-6"><label for="Category" class="">Category</label><input name="category" id="category" value="{{$localUsersData->category}}" placeholder="Category" type="text" class="form-control" value="{{ $localUsersData->category }}" wfd-id="id4">
                                 </div>
 
                                 <div class="position-relative form-group col-6"><label for="email" class="">Email</label><input name="email" id="email" value="{{$localUsersData->email}}" placeholder="Email" type="text" class="form-control" value="{{ $localUsersData->email }}" wfd-id="id4">
