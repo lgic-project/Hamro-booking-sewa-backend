@@ -8,6 +8,13 @@ use App\Models\User;
 class LocalUsersController extends Controller
 {
 
+    //for users information in mobile
+    public function userinfo()
+    {
+        $usersData = User::all();
+        return response()->json($usersData);
+    }
+
     public function index()
     {
         return view('admin.modules.localusers.add');
@@ -61,8 +68,9 @@ class LocalUsersController extends Controller
     {
         $localUsersData = User::find($id);
         $localUsersData->name = request('name');
-        // $localUsersData->last_name = request('last_name');
         $localUsersData->email = request('email');
+        $localUsersData->category = request('category');
+        // $localUsersData->last_name = request('last_name');
         $localUsersData->password = request('password');
         $localUsersData->phone_number = request('phone_number');
         $localUsersData->save();

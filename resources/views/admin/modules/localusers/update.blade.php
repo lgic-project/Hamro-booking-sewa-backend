@@ -24,8 +24,16 @@
                                 <div class="position-relative form-group col-6"><label for="name" class="">Full Name</label><input name="name" id="name" value="{{$localUsersData->name}}" placeholder="full-name" type="text" class="form-control" value="{{ $localUsersData->name }}" wfd-id="id4">
                                 </div>
 
-                                <div class="position-relative form-group col-6"><label for="Category" class="">Category</label><input name="category" id="category" value="{{$localUsersData->category}}" placeholder="Category" type="text" class="form-control" value="{{ $localUsersData->category }}" wfd-id="id4">
+                                <div class="position-relative form-group col-6">
+                                    <label for="category" class="">Category</label>
+                                    <select name="category" id="category" class="form-control">
+                                        <option value="">Select a category</option>
+                                        <option value="superadmin" {{ $localUsersData->category == 'superadmin' ? 'selected' : '' }}>Superadmin</option>
+                                        <option value="hotel" {{ $localUsersData->category == 'hotel' ? 'selected' : '' }}>Hotel</option>
+                                        <option value="user" {{ $localUsersData->category == 'user' ? 'selected' : '' }}>User</option>
+                                    </select>
                                 </div>
+
 
                                 <div class="position-relative form-group col-6"><label for="email" class="">Email</label><input name="email" id="email" value="{{$localUsersData->email}}" placeholder="Email" type="text" class="form-control" value="{{ $localUsersData->email }}" wfd-id="id4">
                                 </div>

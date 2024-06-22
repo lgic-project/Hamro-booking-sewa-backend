@@ -111,7 +111,12 @@
                                                 <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
 
                                                 <div class="col-md-6">
-                                                    <input id="category" type="text" class="form-control @error('category') is-invalid @enderror" name="category" value="{{ old('category') }}" required autocomplete="category" autofocus>
+                                                    <select id="category" class="form-control @error('category') is-invalid @enderror" name="category" required autofocus>
+                                                        <option value="">Select a category</option>
+                                                        <option value="superadmin" {{ old('category') == 'superadmin' ? 'selected' : '' }}>Superadmin</option>
+                                                        <option value="hotel" {{ old('category') == 'hotel' ? 'selected' : '' }}>Hotel</option>
+                                                        <option value="user" {{ old('category') == 'user' ? 'selected' : '' }}>User</option>
+                                                    </select>
 
                                                     @error('category')
                                                     <span class="invalid-feedback" role="alert">
@@ -120,6 +125,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
+
                                             <div class="row mb-3">
                                                 <label for="phone_number" class="col-md-4 col-form-label text-md-end">{{ __('Phone Number') }}</label>
 

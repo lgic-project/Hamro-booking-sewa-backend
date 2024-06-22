@@ -32,7 +32,8 @@ Route::group(['middleware' => 'auth'], function () {
 // route for mobile app
 Route::get('/json-owner', [HotelController::class, 'listMobile'])->name('list.mob');
 Route::get('/json-room', [hotelappController::class, 'applistMobile'])->name('list.mobile');
-
+Route::get('/hotel/json-room', [RoomController::class, 'listMobile'])->name('list.app.mobile');
+Route::get('/userData/json', [LocalUsersController::class, 'userinfo'])->name('userinfo.list');
 
 //Route for API to handle post requests
 // Route::post('/register', [LocalUsersController::class, 'register'])->name('register.localusers');
@@ -62,7 +63,7 @@ Route::get('/hotel/deleterooms/{id}', [hotelappController::class, 'appdelete'])-
 Route::get('/hotel/roomdetail/{id}', [hotelappController::class, 'approomdetail'])->name('roomdetail.rooms');
 
 //routes for hotel rooms for hotelowners
-Route::get('/json-room', [RoomController::class, 'listMobile'])->name('list.app.mobile');
+
 Route::get('/rooms', [RoomController::class, 'index'])->name('app.Addrooms');
 Route::get('/createrooms', [RoomController::class, 'display'])->name('display.room.form');
 Route::post('/createrooms', [RoomController::class, 'create'])->name('createrooms');
