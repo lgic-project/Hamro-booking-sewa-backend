@@ -9,16 +9,16 @@ class HotelOwner extends Model
 {
     use HasFactory;
 
-    protected $table = 'hotel_owner';
+    protected $table = 'hotel_details';
 
     protected $fillable = [
-        'hotel_owner_id',
+        'user_id',
         'title',
         'description',
         'phone_number',
         'email',
         'slug',
-        'owner_status',
+        'hotel_status',
         'photos',
         'location',
         'rating'
@@ -26,6 +26,6 @@ class HotelOwner extends Model
 
     public function rooms()
     {
-        return $this->hasMany(HotelRooms::class, 'hotel_owner_id');
+        return $this->hasMany(HotelRooms::class, 'hotel_id');
     }
 }

@@ -88,15 +88,11 @@
                     </div>
                     @endif
                     <h2> Add Hotel </h2>
-                    <form method="post" action="/hotel/createrooms'" enctype="multipart/form-data">
+                    <form method="post" action="/hotel/createrooms" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ">
                             <label>Room category</label>
                             <input type="text" class="form-control" name="title" placeholder="Room Category">
-                        </div>
-                        <div class="form-group ">
-                            <label>Hotel id</label>
-                            <input type="text" class="form-control" name="hotel_owner_id" placeholder="Hotel id" value="{{ auth()->user()->id }}">
                         </div>
                         <div class="form-group ">
                             <label>Price</label>

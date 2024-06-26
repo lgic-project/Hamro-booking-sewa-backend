@@ -22,7 +22,8 @@ return new class extends Migration
             $table->longText('room_gallery');
             $table->mediumText('room_thumbnail');
             $table->integer('rating');
-            $table->string('hotel_owner_id');
+            $table->string('user_id');
+            $table->string('hotel_id');
             $table->timestamps();
         });
     }

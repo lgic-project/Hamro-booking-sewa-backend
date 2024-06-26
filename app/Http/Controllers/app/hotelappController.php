@@ -1,9 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\app;
+
 use App\Models\HotelRooms;
+use App\Models\HotelOwner;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Auth;
+
 
 class hotelappController extends Controller
 {
@@ -28,18 +33,16 @@ class hotelappController extends Controller
         $roomData = new HotelRooms();
         $roomData->fill($request->all());
 
-        if($request->has('room_gallery'))
-            {
-                foreach($request->file('room_gallery') as $roomGallery)
-                {
-                    $name=$roomGallery->getClientOriginalName();
-                    $roomGallery->move(public_path('images/hotel/room/'), $name);  
-                    $roomGalleryData[] = $name;
-                }
-            } else{
-                $roomGalleryData = [];
+        if ($request->has('room_gallery')) {
+            foreach ($request->file('room_gallery') as $roomGallery) {
+                $name = $roomGallery->getClientOriginalName();
+                $roomGallery->move(public_path('images/hotel/room/'), $name);
+                $roomGalleryData[] = $name;
             }
-        $roomData->room_gallery = json_encode( $roomGalleryData);
+        } else {
+            $roomGalleryData = [];
+        }
+        $roomData->room_gallery = json_encode($roomGalleryData);
 
         // $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
         // // dd($newThumbnailImageName);
@@ -51,8 +54,15 @@ class hotelappController extends Controller
         $request->room_thumbnail->move('images/hotel/room/', $newThumbnailImageName);
 
         $roomData->room_thumbnail = $newThumbnailImageName;
+        $userId = Auth::user()->id;
+        $roomData->user_id = $userId;
 
-        
+        $hotelUser = HotelOwner::where('user_id', '=', $userId)->first();
+        $roomData->hotel_id = $hotelUser->id;
+
+        // dd($roomData);
+
+
         $roomData->slug = Str::slug($request->title);
         $roomData->save();
         return redirect()->back()->with('success', 'New hotel room added successfully');
@@ -100,7 +110,7 @@ class hotelappController extends Controller
         $roomData->delete();
         return redirect()->route('app.listrooms')->with('message', 'Data deleted successfully!!');
     }
-       public function approomdetail($id)
+    public function approomdetail($id)
     {
         $roomData = HotelRooms::findorFail($id);
         return view('app.hotelrooms.roomprofile', compact('roomData'));

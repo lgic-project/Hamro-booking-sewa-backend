@@ -32,18 +32,16 @@ class RoomController extends Controller
         $roomData = new HotelRooms();
         $roomData->fill($request->all());
 
-        if($request->has('room_gallery'))
-            {
-                foreach($request->file('room_gallery') as $roomGallery)
-                {
-                    $name=$roomGallery->getClientOriginalName();
-                    $roomGallery->move(public_path('images/hotel/room/'), $name);  
-                    $roomGalleryData[] = $name;
-                }
-            } else{
-                $roomGalleryData = [];
+        if ($request->has('room_gallery')) {
+            foreach ($request->file('room_gallery') as $roomGallery) {
+                $name = $roomGallery->getClientOriginalName();
+                $roomGallery->move(public_path('images/hotel/room/'), $name);
+                $roomGalleryData[] = $name;
             }
-        $roomData->room_gallery = json_encode( $roomGalleryData);
+        } else {
+            $roomGalleryData = [];
+        }
+        $roomData->room_gallery = json_encode($roomGalleryData);
 
         // $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
         // // dd($newThumbnailImageName);
@@ -56,7 +54,7 @@ class RoomController extends Controller
 
         $roomData->room_thumbnail = $newThumbnailImageName;
 
-        
+
         $roomData->slug = Str::slug($request->title);
         $roomData->save();
         return redirect()->back()->with('success', 'New hotel room added successfully');
@@ -104,9 +102,9 @@ class RoomController extends Controller
         $roomData->delete();
         return redirect()->route('listrooms')->with('message', 'Data deleted successfully!!');
     }
-       public function roomdetail($id)
+    public function roomdetail($id)
     {
         $roomData = HotelRooms::findorFail($id);
         return view('admin.modules.hotelrooms.roomprofile', compact('roomData'));
-}
+    }
 }

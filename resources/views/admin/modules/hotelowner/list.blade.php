@@ -33,20 +33,20 @@
                         @endphp
                     </th>
                     <th><img src="/images/hotel/{{$hotelownerData->photos }}" style="width: 110px; object-fit: cover; height: 100px;"></th>
-                    <td>{{ $hotelownerData->hotel_owner_id }}</td>
+                    <td>{{ $hotelownerData->user_id }}</td>
                     <td>{{ $hotelownerData->title }}</td>
                     <td>{{ $hotelownerData->phone_number }}</td>
                     <td>{{ $hotelownerData->email }}</td>
                     <td>{{ $hotelownerData->rating }}</td>
-                    @if($hotelownerData->owner_status == 'Inactive')
+                    @if($hotelownerData->owner_status == 'Pending')
                     <?php $color = 'danger'; ?>
 
                     @else
                     <?php $color = 'success'; ?>
                     @endif
                     <td>
-                        <a href="/owner/verify/{{$hotelownerData->id}}" onclick="return confirmStatusChange('change status')">
-                            <span class="badge badge-{{$color}} rounded-pill d-inline">{{$hotelownerData->owner_status}}</span>
+                        <a href="/owner/verify/{{$hotelownerData->user_id}}" onclick="return confirmStatusChange('change status')">
+                            <span class="badge badge-{{$color}} rounded-pill d-inline">{{$hotelownerData->hotel_status}}</span>
                         </a>
                     </td>
                     <script>

@@ -91,8 +91,12 @@
     <div class="scrollbar-sidebar">
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
-                <li class="app-sidebar__heading"><i class="fa-solid fa-hotel"></i> Hotel Section</li>
-                
+                <li class="app-sidebar__heading"><i class="fa-solid fa-hotel"></i> Booking Section</li>
+                <li>
+                    <a href="{{ route('display.app.room.form') }}">
+                        <i class="fa-solid fa-door-open"></i> All Bookings
+                    </a>
+                </li>
                 <li class="app-sidebar__heading"><i class="fa-solid fa-bed"></i> Room Section</li>
                 <li>
                     <a href="{{ route('display.app.room.form') }}">
@@ -103,7 +107,7 @@
                     </a>
                 </li>
                 <li class="app-sidebar__heading"><i class="fa-solid fa-users"></i> Local Users</li>
-               
+
             </ul>
         </div>
     </div>

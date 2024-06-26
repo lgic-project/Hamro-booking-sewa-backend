@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\HotelOwner;
+use App\Models\HotelRooms;
 use Illuminate\Support\Str;
 use File;
 
@@ -15,7 +16,8 @@ class HotelController extends Controller
     //for data to display in mobile format:
     public function listMobile()
     {
-        $hotelownerData = HotelOwner::all();
+        $hotelownerData = HotelOwner::with('rooms')->get();
+        // dd($hotelownerData);
         return response()->json($hotelownerData);
     }
 
@@ -36,7 +38,7 @@ class HotelController extends Controller
 
         $hotelownerData->photos = $newThumbnailImageName;
 
-        $hotelownerData->owner_status = "Inactive";
+        // $hotelownerData->hotel_status = "Pending";
 
         $hotelownerData->slug = Str::slug($request->title);
 
@@ -64,9 +66,9 @@ class HotelController extends Controller
     public function verify($id)
     {
         $record = HotelOwner::findorFail($id);
-        if ($record->owner_status == "Active") {
-            $record->owner_status = 'Inactive';
-        } else $record->owner_status = 'Active';
+        if ($record->hotel_status == "Approved") {
+            $record->hotel_status = 'Pending';
+        } else $record->hotel_status = 'Approved';
         $record->save();
         return redirect()->route('listowner');
     }

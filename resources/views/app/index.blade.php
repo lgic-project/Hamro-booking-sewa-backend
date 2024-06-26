@@ -10,11 +10,10 @@
                 <div class="page-title-wrapper">
                     <div class="page-title-heading">
                         <div class="page-title-icon">
-                            <i class="pe-7s-car icon-gradient bg-mean-fruit">
-                            </i>
+                            <i class="fa-solid fa-atom"></i>
                         </div>
-                        <div> तालिम तथा रोजगार व्यवस्थापन सूचना प्रणाली
-                            <div class="page-title-subheading"> तालिम तथा रोजगार व्यवस्थापन सूचना प्रणाली
+                        <div> Dashboard
+                            <div class="page-title-subheading"> Hamro Booking Sewa
                             </div>
                         </div>
                     </div>
@@ -85,7 +84,7 @@
                     <div class="card mb-3 widget-content bg-midnight-bloom">
                         <div class="widget-content-wrapper text-white">
                             <div class="widget-content-left">
-                                <div class="widget-heading">जम्मा सीपमूलक तालिम लिन चाहनेहरु</div>
+                                <div class="widget-heading">Total Bookings</div>
                                 <div class="widget-subheading"></div>
                             </div>
                             <div class="widget-content-right">
@@ -98,7 +97,7 @@
                     <div class="card mb-3 widget-content bg-arielle-smile">
                         <div class="widget-content-wrapper text-white">
                             <div class="widget-content-left">
-                                <div class="widget-heading">रोजगारीको खोजीमा भएकाहरु</div>
+                                <div class="widget-heading">Total Rooms</div>
                                 <div class="widget-subheading"></div>
                             </div>
                             <div class="widget-content-right">
@@ -111,7 +110,7 @@
                     <div class="card mb-3 widget-content bg-grow-early">
                         <div class="widget-content-wrapper text-white">
                             <div class="widget-content-left">
-                                <div class="widget-heading">जम्मा रोजगारदाताहरु</div>
+                                <div class="widget-heading">Total Inquiries</div>
                                 <div class="widget-subheading"></div>
                             </div>
                             <div class="widget-content-right">
@@ -124,7 +123,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="main-card mb-3 card">
-                        <div class="card-header">तलिममा सहभागी हुन चाहनेहरुको सूचि
+                        <div class="card-header">Booking Listing
                             <div class="btn-actions-pane-right">
                             </div>
                         </div>
@@ -133,10 +132,10 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">#</th>
-                                        <th>तालिमहरु </th>
-                                        <th class="text-center">नाम </th>
-                                        <th class="text-center">उमेर </th>
-                                        <th class="text-center">सम्पर्क नं:</th>
+                                        <th>Booking Id </th>
+                                        <th class="text-center">Name </th>
+                                        <th class="text-center">Phone </th>
+                                        <th class="text-center">Email</th>
                                     </tr>
                                 </thead>
                                 <tbody>

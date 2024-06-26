@@ -19,11 +19,12 @@ class HotelRooms extends Model
         'room_gallery',
         'room_thumbnail',
         'rating',
-        'hotel_owner_id'
+        'user_id',
+        'hotel_id'
     ];
 
     public function howner()
     {
-        return $this->belongsTo(HotelOwner::class, 'hotel_owner_id');
+        return $this->belongsTo(HotelOwner::class, 'user_id');
     }
 }

@@ -92,7 +92,7 @@
                         @csrf
                         <div class="form-group">
                             <label>Hotel Owner ID </label>
-                            <input type="text" class="form-control" name="hotel_owner_id" placeholder="Hotel-Owner-ID">
+                            <input type="text" class="form-control" name="user_id" value="{{ auth()->user()->id }}" placeholder="Hotel-Owner-ID">
                         </div>
                         <div class="form-group">
                             <label>Hotel Title</label>
