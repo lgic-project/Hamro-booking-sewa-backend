@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\app\hotelappController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\MobAuthController;
+use App\Http\Controllers\login\LoginController;
 use App\Http\Controllers\DashboardController;
 use GuzzleHttp\Psr7\Request;
 
@@ -107,3 +108,4 @@ Route::get('/doRegister', function (Request $req) {
 });
 
 Route::post('/registerUser/add', [LocalUsersController::class, 'store'])->name('store.register.user');
+Route::post('/login/mobile', [LoginController::class, 'login']);
