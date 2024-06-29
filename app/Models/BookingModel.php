@@ -12,9 +12,12 @@ class BookingModel extends Model
     protected $table = 'booking';
 
     protected $fillable = [
-        'room',
-        'date',
-        'time',
-        'people',
+        'hotel_user_id',
+        'room_id',
+        'end_user_id',
+        'total_people',
+        'booking_id',
+        'arrival_date',
+        'arrival_time',
     ];
 }

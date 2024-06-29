@@ -10,19 +10,15 @@ class BookingController extends Controller
     //
     public function store(Request $request)
     {
-        $request->validate([
-            'room' => 'required|string|max:255',
-            'date' => 'required|date',
-            'arrivalTime' => 'required|string|min:5', // Correct field name and time format
-            'people' => 'required|integer|min:1', // Assuming number of people should be an integer
-        ]);
 
         $bookingData = new BookingModel();
-        $bookingData->room = $request->input('room');
-        $bookingData->room_thumbnail = $request->input('room_thumbnail');
-        $bookingData->date = $request->input('date');
-        $bookingData->time = $request->input('arrivalTime'); // Correct field name
-        $bookingData->people = $request->input('people');
+        $bookingData->hotel_user_id = $request->input('hotel_user_id');
+        $bookingData->room_id = $request->input('room_id');
+        $bookingData->end_user_id = $request->input('end_user_id');
+        $bookingData->total_people = $request->input('total_people');
+        $bookingData->booking_id = $request->input('booking_id');
+        $bookingData->arrival_date = $request->input('arrival_date');
+        $bookingData->arrival_time = $request->input('arrival_time'); // Correct field name
         $bookingData->save();
 
         return response()->json(['message' => 'Booked successfully', 'bookingData' => $bookingData]);

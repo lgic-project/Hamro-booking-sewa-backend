@@ -69,7 +69,8 @@ class hotelappController extends Controller
     }
     public function applist()
     {
-        $roomData = HotelRooms::all();
+        $userId = Auth::user()->id;
+        $roomData = HotelRooms::where('user_id', '=', $userId)->get();
         return view('app.hotelrooms.list', compact('roomData'));
     }
     public function appedit($id)
