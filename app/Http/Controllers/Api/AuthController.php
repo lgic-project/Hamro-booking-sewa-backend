@@ -38,6 +38,21 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+                'email'     => 'required|string|max:255',
+                'password'  => 'required|string'
+              ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors());
+        }
+
+        $credentials    =   $request->only('email', 'password');
+
+        if (! Auth::attempt($credentials)) {
+            return response()->json([
+                'message' => 'User not found'
+            ], 401);
+        }
         
     }
 
