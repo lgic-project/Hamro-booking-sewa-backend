@@ -20,7 +20,7 @@
                             <div class="card-body">
                                 <div>
                                     <ul>
-                                        <li><strong>Booking Id: </strong> {{ $bookingData->id }}</li>
+                                        <li><strong>Booking Id: </strong> {{ $bookingData->booking_id }}</li>
                                         <li><strong>Full Name: </strong> {{ $endUserData->name }}
                                         <li><strong>Email Address: </strong> {{ $endUserData->email }}</li>
                                         <li><strong>Contact Number: </strong> {{ $endUserData->phone_number }}</li>
