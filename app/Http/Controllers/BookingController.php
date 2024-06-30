@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BookingModel;
 use App\Models\HotelRooms;
+use App\Models\HotelOwner;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -51,7 +52,19 @@ class BookingController extends Controller
     public function bookingEndUserData($id)
     {
         $bookingData = BookingModel::where('end_user_id', '=', $id)->get();
-
         return response()->json($bookingData);
+    }
+
+    public function bookingEndUserDataDetail($id)
+    {
+        $bookingData = BookingModel::find($id);
+        $roomData = HotelRooms::find($bookingData->room_id);
+        $hotelOwnerData = HotelOwner::find($bookingData->hotel_user_id);
+
+        return Response::json(array(
+            'bookingData' => $bookingData,
+            'hotelOwnerData' => $hotelOwnerData,
+            'roomData' => $roomData,
+        ));
     }
 }
