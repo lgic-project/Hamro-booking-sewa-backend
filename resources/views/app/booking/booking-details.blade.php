@@ -1,41 +1,36 @@
-@extends('admin.master')
+@extends('app.master')
 
 @section('content')
-    <div class="page-body">
+<div class="app-main">
+    @include('app.partials._nav')
+    <div class="app-main__outer">
+        <div class="page-body">
+            <!-- Container-fluid starts-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header  card-header--2">
 
-        <!-- Container-fluid starts-->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="card">
-                        <div class="card-header  card-header--2">
-
-                            <div>
-                                <h5>Booking Details: {{ $bookingData->packageName }}</h5>
+                                <div>
+                                    <h5>Booking Details: {{ $endUserData->name }}</h5>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="card-body">
-                            <div>
-                                <ul>
-                                    <li><strong>Booking Id: </strong> {{ $bookingData->booking_id }}</li>
-                                    <li><strong>Package Name: </strong> {{ $bookingData->packageName }}</li>
-                                    <li><strong>Full Name: </strong> {{ $bookingData->firstName }}
-                                        {{ $bookingData->lastName }}</li>
-                                    <li><strong>Gender: </strong> {{ $bookingData->gender }}</li>
-                                    <li><strong>DOB: </strong> {{ $bookingData->dob }}</li>
-                                    <li><strong>Nationality: </strong> {{ $bookingData->nationality }}</li>
-                                    <li><strong>Email Address: </strong> {{ $bookingData->emailAddress }}</li>
-                                    <li><strong>Contact Number: </strong> {{ $bookingData->contactNumber }}</li>
-                                    <li><strong>Country: </strong> {{ $bookingData->country }}</li>
-                                    <li><strong>Province: </strong> {{ $bookingData->province }}</li>
-                                    <li><strong>State: </strong> {{ $bookingData->state }}</li>
-                                    <li><strong>Trip Date: </strong> {{ $bookingData->tripDate }}</li>
-                                    <li><strong>Total Guest: </strong> {{ $bookingData->guestCount }}</li>
-                                    <li><strong>Total Price: </strong> {{ $bookingData->totalPrice }}</li>
-                                    <li><strong>Specific Requirement: </strong> {{ $bookingData->specificRequirement }}
-                                    </li>
-                                </ul>
+                            <div class="card-body">
+                                <div>
+                                    <ul>
+                                        <li><strong>Booking Id: </strong> {{ $bookingData->id }}</li>
+                                        <li><strong>Full Name: </strong> {{ $endUserData->name }}
+                                        <li><strong>Email Address: </strong> {{ $endUserData->email }}</li>
+                                        <li><strong>Contact Number: </strong> {{ $endUserData->phone_number }}</li>
+                                        <li><strong>Arrival Date & Time: </strong> {{ $bookingData->arrival_date }} || {{ $bookingData->arrival_time }}</li>
+                                        <li><strong>Total Guest: </strong> {{ $bookingData->total_people }}</li>
+                                        <li><strong>Room Price: </strong> {{ $bookingData->totalPrice }}</li>
+                                        <li><strong>Room Category: </strong> {{ $bookingData->totalPrice }}</li>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -43,4 +38,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

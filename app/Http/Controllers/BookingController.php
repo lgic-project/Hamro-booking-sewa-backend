@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\BookingModel;
+use App\Models\HotelRooms;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -35,5 +37,12 @@ class BookingController extends Controller
         $bookingData = BookingModel::find($id);
         $bookingData->delete();
         return response()->json(['message' => 'Deleted Successfully', 'bookingData' => $bookingData]);
+    }
+
+    public function bookingDetails($id)
+    {
+        $bookingData = BookingModel::find($id);
+        $endUserData = User::find($bookingData->end_user_id);
+        return view('app.booking.booking-details', compact('bookingData','endUserData'));
     }
 }
