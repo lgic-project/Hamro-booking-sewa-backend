@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Mail;
 
 class RegisterController extends Controller
 {
@@ -64,12 +65,30 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         // dd($data);
-        return User::create([
+        $userData = [
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'category' => $data['category'],
             'phone_number' => $data['phone_number']
-        ]);
+        ];
+
+        $userRegistration = User::create($userData);
+
+        // return User::create([
+        //     'name' => $data['name'],
+        //     'email' => $data['email'],
+        //     'password' => Hash::make($data['password']),
+        //     'category' => $data['category'],
+        //     'phone_number' => $data['phone_number']
+        // ]);
+
+        Mail::send('mail/registration',$userRegistration, function($message) use ($request)
+            {
+                $message->from('hamrobookingsewa@gmail.com');
+                $message->to($data['email'])
+                ->subject('Thank you for registration'. $data['name']);
+            }
+        );
     }
 }
