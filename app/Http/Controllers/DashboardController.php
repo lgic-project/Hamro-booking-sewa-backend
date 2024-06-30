@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use App\Models\HotelOwner;
+use App\Models\BookingModel;
 use Illuminate\Support\Str;
 
 class DashboardController extends Controller
@@ -23,7 +24,8 @@ class DashboardController extends Controller
                 if ($hotel->hotel_status == 'Pending') {
                     return redirect('/pending-page');
                 } else {
-                    return view('app.index');
+                    $bookingData = BookingModel::where('hotel_user_id', '=', $userId)->get();
+                    return view('app.index', compact('bookingData'));
                 }
             }
         }
