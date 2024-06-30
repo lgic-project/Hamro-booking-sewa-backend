@@ -11,6 +11,7 @@ class BookingController extends Controller
     public function store(Request $request)
     {
 
+
         $bookingData = new BookingModel();
         $bookingData->hotel_user_id = $request->input('hotel_user_id');
         $bookingData->room_id = $request->input('room_id');
