@@ -59,9 +59,9 @@ class BookingController extends Controller
     {
         $bookingData = BookingModel::find($id);
         $roomData = HotelRooms::find($bookingData->room_id);
-        $hotelOwnerData = HotelOwner::find($bookingData->hotel_user_id);
+        $hotelOwnerData = HotelOwner::where('user_id', '=', $bookingData->hotel_user_id)->first();
 
-        return Response::json(array(
+        return response()->json(array(
             'bookingData' => $bookingData,
             'hotelOwnerData' => $hotelOwnerData,
             'roomData' => $roomData,
