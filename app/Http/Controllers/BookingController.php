@@ -61,7 +61,7 @@ class BookingController extends Controller
         $roomData = HotelRooms::find($bookingData->room_id);
         $hotelOwnerData = HotelOwner::find($bookingData->hotel_user_id);
 
-        return Response::json(array(
+        return response()->json(array(
             'bookingData' => $bookingData,
             'hotelOwnerData' => $hotelOwnerData,
             'roomData' => $roomData,
