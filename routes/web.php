@@ -40,6 +40,7 @@ Route::get('/userData/json', [LocalUsersController::class, 'userinfo'])->name('u
 Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');
 Route::get('/booking-json', [BookingController::class, 'bookinginfo'])->name('booking.json');
 Route::get('/dashboard/view-booking/{id}', [App\Http\Controllers\BookingController::class, 'bookingDetails'])->name('bookingDetails');
+Route::get('/dashboard/view-end-user-booking/{id}', [App\Http\Controllers\BookingController::class, 'bookingEndUserData'])->name('bookingEndUserData');
 Route::get('/cancel-booking/{id}', [BookingController::class, 'cancelbooking'])->name('cancel-booking');
 
 //Route for API to handle post requests`
