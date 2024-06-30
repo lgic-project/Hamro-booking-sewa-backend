@@ -23,20 +23,32 @@ class LocalUsersController extends Controller
     //for saving in database
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:local_users|max:255',
-            'password' => 'required|string|min:8',
-            'phone_number' => 'required|string|max:15',
-        ]);
+         // dd($data);
+        $userData = [
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'category' => $data['category'],
+            'phone_number' => $data['phone_number']
+        ];
 
-        $localUsersData = new User();
-        $localUsersData->name = $request->input('name');
-        $localUsersData->category = $request->input('category');
-        $localUsersData->email = $request->input('email');
-        $localUsersData->password = $request->input('password');
-        $localUsersData->phone_number = $request->input('phone_number');
-        $localUsersData->save();
+        $userRegistration = User::create($userData);
+
+        // return User::create([
+        //     'name' => $data['name'],
+        //     'email' => $data['email'],
+        //     'password' => Hash::make($data['password']),
+        //     'category' => $data['category'],
+        //     'phone_number' => $data['phone_number']
+        // ]);
+
+        Mail::send('mail/registration',$userRegistration, function($message) use ($request)
+            {
+                $message->from('hamrobookingsewa@gmail.com');
+                $message->to($data['email'])
+                ->subject('Thank you for registration'. $data['name']);
+            }
+        );
 
         return response()->json(['message' => 'User registered successfully', 'localUsersData' => $localUsersData]);
     }
