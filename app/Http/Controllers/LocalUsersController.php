@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Mail;
 
 class LocalUsersController extends Controller
 {
@@ -21,18 +23,22 @@ class LocalUsersController extends Controller
     }
 
     //for saving in database
-    public function store(array $data)
+    public function store(Request $request)
     {
-         // dd($data);
-        $userData = [
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'category' => $data['category'],
-            'phone_number' => $data['phone_number']
+        // dd($data);
+        // $localUsersData = new User();
+
+        // $localUsersData->save();
+
+        $localUsersDataContent = [
+            'name' => $request->input('name'),
+            'category' => $request->input('category'),
+            'email' => $request->input('email'),
+            'password' => $request->input('password'),
+            'phone_number' => $request->input('phone_number'),
         ];
 
-        $userRegistration = User::create($userData);
+        $localUsersData = User::create($localUsersDataContent);
 
         // return User::create([
         //     'name' => $data['name'],
@@ -42,15 +48,18 @@ class LocalUsersController extends Controller
         //     'phone_number' => $data['phone_number']
         // ]);
 
-        Mail::send('mail/registration',$userRegistration, function($message) use ($request)
-            {
+
+        Mail::send(
+            'mail/registration',
+            $localUsersDataContent,
+            function ($message) use ($request) {
                 $message->from('hamrobookingsewa@gmail.com');
-                $message->to($data['email'])
-                ->subject('Thank you for registration'. $data['name']);
+                $message->to($request->email)
+                    ->subject('Thank you for registration ' . $request->name);
             }
         );
 
-        return response()->json(['message' => 'User registered successfully', 'localUsersData' => $localUsersData]);
+        return response()->json(['message' => 'User registered successfully', 'localUsersData' => $localUsersDataContent]);
     }
 
     //for listing
