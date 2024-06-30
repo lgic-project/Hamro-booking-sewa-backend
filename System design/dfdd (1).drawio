@@ -1,0 +1,161 @@
+<mxfile host="app.diagrams.net" modified="2024-06-30T07:49:02.233Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="fWxXkG4wNIMXgDry1Mwo" version="24.6.4" type="device">
+  <diagram name="Page-1" id="aIUAo8AKRlc9LjFPKZk0">
+    <mxGraphModel dx="1120" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="y9Ar2umbMEFurx9UIvV7-1" target="y9Ar2umbMEFurx9UIvV7-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-7" value="Request For registration" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="y9Ar2umbMEFurx9UIvV7-6">
+          <mxGeometry x="-0.6231" y="-4" relative="1" as="geometry">
+            <mxPoint x="71" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-1" value="User" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="y9Ar2umbMEFurx9UIvV7-2" target="y9Ar2umbMEFurx9UIvV7-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-18" value="Sign in as Admin" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="y9Ar2umbMEFurx9UIvV7-17">
+          <mxGeometry x="0.1127" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-2" value="Admin" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="680" y="10" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="y9Ar2umbMEFurx9UIvV7-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="395" y="280" />
+              <mxPoint x="301" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-4" value="1.0&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Registration&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="330" y="120" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="y9Ar2umbMEFurx9UIvV7-4" target="y9Ar2umbMEFurx9UIvV7-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="330" y="190" />
+              <mxPoint x="90" y="190" />
+              <mxPoint x="90" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-9" value="Provide User ID and Password" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="y9Ar2umbMEFurx9UIvV7-8">
+          <mxGeometry x="0.2586" y="-1" relative="1" as="geometry">
+            <mxPoint x="23" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.969;entryY=0.215;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="y9Ar2umbMEFurx9UIvV7-2" target="y9Ar2umbMEFurx9UIvV7-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="565" y="65" />
+              <mxPoint x="565" y="60" />
+              <mxPoint x="446" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-11" value="Disabale and Enable Users" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="y9Ar2umbMEFurx9UIvV7-10">
+          <mxGeometry x="0.3335" y="-2" relative="1" as="geometry">
+            <mxPoint x="63" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.977;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="y9Ar2umbMEFurx9UIvV7-2" target="y9Ar2umbMEFurx9UIvV7-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="211" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-13" value="Add New user" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="540" y="188" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-14" value="Login" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="560" y="280" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-15" value="" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="160" as="sourcePoint" />
+            <mxPoint x="560" y="340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="80" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-16" value="Sign in as user" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="y9Ar2umbMEFurx9UIvV7-15">
+          <mxGeometry x="0.0086" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=-0.018;exitY=0.1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.631;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="y9Ar2umbMEFurx9UIvV7-2" target="y9Ar2umbMEFurx9UIvV7-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="150" as="sourcePoint" />
+            <mxPoint x="440" y="100" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="570" y="21" />
+              <mxPoint x="570" y="20" />
+              <mxPoint x="412" y="20" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-22" value="Registration for Hotel Owner&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="y9Ar2umbMEFurx9UIvV7-21">
+          <mxGeometry x="0.328" y="3" relative="1" as="geometry">
+            <mxPoint x="82" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-24" value="Room Info&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="240" y="440" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-26" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.008;entryY=0.383;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.138;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="y9Ar2umbMEFurx9UIvV7-1" target="y9Ar2umbMEFurx9UIvV7-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="150" as="sourcePoint" />
+            <mxPoint x="440" y="300" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="60" y="160" />
+              <mxPoint x="60" y="486" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-27" value="Check for availability" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="y9Ar2umbMEFurx9UIvV7-26">
+          <mxGeometry x="0.3726" y="2" relative="1" as="geometry">
+            <mxPoint x="55" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-28" value="" style="endArrow=classic;html=1;rounded=0;exitX=-0.025;exitY=0.633;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="505.96000000000004" as="sourcePoint" />
+            <mxPoint x="43" y="160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="43" y="506" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-29" value="Available Rooms" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="y9Ar2umbMEFurx9UIvV7-28">
+          <mxGeometry x="-0.3511" y="1" relative="1" as="geometry">
+            <mxPoint x="56" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-32" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="y9Ar2umbMEFurx9UIvV7-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="450" as="sourcePoint" />
+            <mxPoint x="250" y="530" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="20" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="y9Ar2umbMEFurx9UIvV7-33" value="Books the Rooms" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="y9Ar2umbMEFurx9UIvV7-32">
+          <mxGeometry x="0.4322" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
