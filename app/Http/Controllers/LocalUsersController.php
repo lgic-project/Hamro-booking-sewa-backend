@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Mail;
 
 class LocalUsersController extends Controller
 {
@@ -23,22 +25,41 @@ class LocalUsersController extends Controller
     //for saving in database
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:local_users|max:255',
-            'password' => 'required|string|min:8',
-            'phone_number' => 'required|string|max:15',
-        ]);
+        // dd($data);
+        // $localUsersData = new User();
 
-        $localUsersData = new User();
-        $localUsersData->name = $request->input('name');
-        $localUsersData->category = $request->input('category');
-        $localUsersData->email = $request->input('email');
-        $localUsersData->password = $request->input('password');
-        $localUsersData->phone_number = $request->input('phone_number');
-        $localUsersData->save();
+        // $localUsersData->save();
 
-        return response()->json(['message' => 'User registered successfully', 'localUsersData' => $localUsersData]);
+        $localUsersDataContent = [
+            'name' => $request->input('name'),
+            'category' => $request->input('category'),
+            'email' => $request->input('email'),
+            'password' => $request->input('password'),
+            'phone_number' => $request->input('phone_number'),
+        ];
+
+        $localUsersData = User::create($localUsersDataContent);
+
+        // return User::create([
+        //     'name' => $data['name'],
+        //     'email' => $data['email'],
+        //     'password' => Hash::make($data['password']),
+        //     'category' => $data['category'],
+        //     'phone_number' => $data['phone_number']
+        // ]);
+
+
+        Mail::send(
+            'mail/registration',
+            $localUsersDataContent,
+            function ($message) use ($request) {
+                $message->from('hamrobookingsewa@gmail.com');
+                $message->to($request->email)
+                    ->subject('Thank you for registration ' . $request->name);
+            }
+        );
+
+        return response()->json(['message' => 'User registered successfully', 'localUsersData' => $localUsersDataContent]);
     }
 
     //for listing
