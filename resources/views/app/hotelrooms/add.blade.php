@@ -100,7 +100,7 @@
                         </div>
                         <div class="form-group">
                             <label>Total Rooms</label>
-                            <input type="number" class="form-control" name="total_rooms" placeholder="total_rooms">
+                            <input type="number" class="form-control" name="total_rooms" placeholder="Total Rooms">
                         </div>
                         <div class="form-group">
                             <label>room_gallery</label>
@@ -108,11 +108,14 @@
                         </div>
                         <div class="form-group">
                             <label>Rating </label>
-                            <input type="text" class="form-control" name="rating" placeholder="rating">
+                            <input type="text" class="form-control" name="rating" placeholder="Rating">
                         </div>
                         <div class="form-group">
                             <label>Available </label>
-                            <input type="text" class="form-control" name="is_available" placeholder="is_available">
+                            <select name="is_available" class="form-control" id="is_available">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Thmbnail</label>
