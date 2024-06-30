@@ -87,7 +87,7 @@
                         </button>
                     </div>
                     @endif
-                    <h2> Add Hotel </h2>
+                    <h2> Add Room </h2>
                     <form method="post" action="/hotel/createrooms" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ">
