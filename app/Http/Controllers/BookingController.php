@@ -50,7 +50,7 @@ class BookingController extends Controller
 
     public function bookingEndUserData($id)
     {
-        $bookingData = BookingModel::where('end_user_id', '=', $userId)->get();
+        $bookingData = BookingModel::where('end_user_id', '=', $id)->get();
 
         return json($bookingData);
     }
