@@ -26,8 +26,8 @@
                                         <li><strong>Contact Number: </strong> {{ $endUserData->phone_number }}</li>
                                         <li><strong>Arrival Date & Time: </strong> {{ $bookingData->arrival_date }} || {{ $bookingData->arrival_time }}</li>
                                         <li><strong>Total Guest: </strong> {{ $bookingData->total_people }}</li>
-                                        <li><strong>Room Price: </strong> {{ $bookingData->totalPrice }}</li>
-                                        <li><strong>Room Category: </strong> {{ $bookingData->totalPrice }}</li>
+                                        <li><strong>Room Price: </strong> {{ $roomData->title }}</li>
+                                        <li><strong>Room Category: </strong> {{ $roomData->price }}</li>
                                         </li>
                                     </ul>
                                 </div>
