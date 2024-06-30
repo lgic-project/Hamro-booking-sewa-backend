@@ -21,7 +21,7 @@ class LocalUsersController extends Controller
     }
 
     //for saving in database
-    public function store(Request $request)
+    public function store(array $data)
     {
          // dd($data);
         $userData = [
