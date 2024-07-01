@@ -93,7 +93,7 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading"><i class="fa-solid fa-hotel"></i> Booking Section</li>
                 <li>
-                    <a href="{{ route('display.app.room.form') }}">
+                    <a href="{{ route('booking-list') }}">
                         <i class="fa-solid fa-door-open"></i> All Bookings
                     </a>
                 </li>

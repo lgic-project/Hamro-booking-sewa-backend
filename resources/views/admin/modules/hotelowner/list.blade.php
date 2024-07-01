@@ -45,7 +45,7 @@
                     <?php $color = 'success'; ?>
                     @endif
                     <td>
-                        <a href="/owner/verify/{{$hotelownerData->user_id}}" onclick="return confirmStatusChange('change status')">
+                        <a href="/owner/verify/{{$hotelownerData->id}}" onclick="return confirmStatusChange('change status')">
                             <span class="badge badge-{{$color}} rounded-pill d-inline">{{$hotelownerData->hotel_status}}</span>
                         </a>
                     </td>

@@ -135,6 +135,7 @@
                                         <th>Booking Id </th>
                                         <th class="text-center">Total People </th>
                                         <th class="text-center">Arrival Date </th>
+                                        <th class="text-center">Email</th>
                                     </tr>
                                 </thead>
                                 <tbody>

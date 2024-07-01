@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use App\Models\BookingModel;
 use App\Models\HotelRooms;
 use App\Models\HotelOwner;
@@ -49,6 +49,12 @@ class BookingController extends Controller
         return view('app.booking.booking-details', compact('bookingData','endUserData', 'roomData'));
     }
 
+    public function bookinglist()
+    {
+        $loginId = Auth::user()->id;
+        $bookingData = BookingModel::where('hotel_user_id','=', $loginId)->get();
+        return view('app.booking.booking-list', compact('bookingData'));
+    }
     public function bookingListingJson($id)
     {
         $bookingData = BookingModel::where('hotel_user_id', '=', $id)->get();
