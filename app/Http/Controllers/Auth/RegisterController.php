@@ -73,7 +73,7 @@ class RegisterController extends Controller
             'phone_number' => $data['phone_number']
         ];
 
-        $userRegistration = User::create($userData);
+        $localUsersData = User::create($userData);
 
         // return User::create([
         //     'name' => $data['name'],
@@ -83,12 +83,16 @@ class RegisterController extends Controller
         //     'phone_number' => $data['phone_number']
         // ]);
 
-        Mail::send('mail/registration',$userRegistration, function($message) use ($request)
-            {
+        Mail::send(
+            'mail/registration',
+            $userData,
+            function ($message) use ($data) {
                 $message->from('hamrobookingsewa@gmail.com');
                 $message->to($data['email'])
-                ->subject('Thank you for registration'. $data['name']);
+                    ->subject('Thank you for registration ' . $data['name']);
             }
         );
+
+        return $localUsersData;
     }
 }
