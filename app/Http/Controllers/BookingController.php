@@ -51,10 +51,10 @@ class BookingController extends Controller
 
     public function bookingDetailsJson($id)
     {
-        $bookingData = BookingModel::where('hotel_user_id', '=', $id)->get();
+        $bookingData = BookingModel::where('id', '=', $id)->first();
         // dd($bookingData[0]->room_id);
-        $roomData = HotelRooms::find($bookingData[0]->room_id);
-        $endUserData = User::find($bookingData[0]->end_user_id);
+        $roomData = HotelRooms::find($bookingData->room_id);
+        $endUserData = User::find($bookingData->end_user_id);
         return response()->json(array(
             'bookingData' => $bookingData,
             'endUserData' => $endUserData,
