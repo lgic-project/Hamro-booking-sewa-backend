@@ -29,44 +29,37 @@ class hotelappController extends Controller
     }
 
     public function appcreate(Request $request)
-    {
-        $roomData = new HotelRooms();
-        $roomData->fill($request->all());
+{
+    $roomData = new HotelRooms();
+    $roomData->fill($request->all());
 
-        if ($request->has('room_gallery')) {
-            foreach ($request->file('room_gallery') as $roomGallery) {
-                $name = $roomGallery->getClientOriginalName();
-                $roomGallery->move(public_path('images/hotel/room/'), $name);
-                $roomGalleryData[] = $name;
-            }
-        } else {
-            $roomGalleryData = [];
-        }
-        $roomData->room_gallery = json_encode($roomGalleryData);
+    // Handling room gallery
+    $newGalleryImageName = $request->file('room_gallery')->getClientOriginalName();
+    $request->room_gallery->move('images/hotel/room/', $newGalleryImageName);
+    $roomData->room_gallery = $newGalleryImageName;
 
-        // $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
-        // // dd($newThumbnailImageName);
-        // $request->room_gallery->move('images/hotel/room/', $newThumbnailImageName);
+    // Handling room thumbnail
+    $newThumbnailImageName = $request->file('room_thumbnail')->getClientOriginalName();
+    $request->room_thumbnail->move('images/hotel/room/', $newThumbnailImageName);
+    $roomData->room_thumbnail = $newThumbnailImageName;
 
-        // $roomData->room_gallery = $newThumbnailImageName;
-        $newThumbnailImageName = $request->file('room_thumbnail')->getClientOriginalName();
-        // dd($newThumbnailImageName);
-        $request->room_thumbnail->move('images/hotel/room/', $newThumbnailImageName);
+    // Assign user ID
+    $userId = Auth::user()->id;
+    $roomData->user_id = $userId;
 
-        $roomData->room_thumbnail = $newThumbnailImageName;
-        $userId = Auth::user()->id;
-        $roomData->user_id = $userId;
+    // Assign hotel ID
+    $hotelUser = HotelOwner::where('user_id', '=', $userId)->first();
+    $roomData->hotel_id = $hotelUser->id;
 
-        $hotelUser = HotelOwner::where('user_id', '=', $userId)->first();
-        $roomData->hotel_id = $hotelUser->id;
+    // Set slug
+    $roomData->slug = Str::slug($request->title);
 
-        // dd($roomData);
+    // Save room data
+    $roomData->save();
 
+    return redirect()->back()->with('success', 'New hotel room added successfully');
+}
 
-        $roomData->slug = Str::slug($request->title);
-        $roomData->save();
-        return redirect()->back()->with('success', 'New hotel room added successfully');
-    }
     public function applist()
     {
         $userId = Auth::user()->id;
@@ -76,6 +69,7 @@ class hotelappController extends Controller
     public function appedit($id)
     {
         $roomData = HotelRooms::find($id);
+        //dd($roomData);
         return view('app.hotelrooms.update', compact('roomData'));
     }
     public function appupdate(Request $request, $id)
@@ -90,18 +84,19 @@ class hotelappController extends Controller
         $roomData->room_thumbnail = $request->room_thumbnail;
         $roomData->rating = $request->rating;
 
-
-
-        if ($request->has('room_thumbnail')) {
-
-            File::delete(public_path('images/hotel/$title' . $roomData->room_thumbnail));
-
-            $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
-            // dd($newThumbnailImageName);
-            $request->room_thumbnail->move('images/hotel/$title', $newThumbnailImageName);
-
+        
+        if ($request->hasFile('room_gallery')) {
+            $newGalleryImageName = $request->file('room_gallery')->getClientOriginalName();
+            $request->room_gallery->move('images/hotel/room/', $newGalleryImageName);
+            $roomData->room_gallery = $newGalleryImageName;
+        }
+    
+        if ($request->hasFile('room_thumbnail')) {
+            $newThumbnailImageName = $request->file('room_thumbnail')->getClientOriginalName();
+            $request->room_thumbnail->move('images/hotel/room/', $newThumbnailImageName);
             $roomData->room_thumbnail = $newThumbnailImageName;
         }
+       
         $roomData->save();
         return redirect()->route('app.listrooms')->with('success', 'Data updated successfully!!');
     }

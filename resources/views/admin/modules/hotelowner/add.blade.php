@@ -100,11 +100,11 @@
                         </div>
                         <div class="form-group">
                             <label>Phone Number</label>
-                            <input type="text" class="form-control" name="phone_number" placeholder="Phone number">
+                            <input type=" number" class="form-control" name="phone_number" placeholder="Phone number">
                         </div>
                         <div class="form-group">
                             <label>Rating</label>
-                            <input type="text" class="form-control" name="rating" placeholder="Rating">
+                            <input type="number" class="form-control" name="rating" placeholder="Rating">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
@@ -112,7 +112,7 @@
                         </div>
                         <div class="form-group">
                             <label>Photos</label>
-                            <input type="file" class="form-control" name="photos" placeholder="Upload photos here.">
+                            <input type="file" class="form-control" accept="image/*" name="photos" placeholder="Upload photos here.">
                         </div>
                         <div class="form-group">
                             <label>Hotel Location </label>

@@ -37,11 +37,11 @@
                     <td>{{ $roomData->total_rooms }}</td>
                     <td>{{ $roomData->is_available }}</td>
                     <td>
-                        <a href="{{route ('edit.rooms', ['id' => $roomData->id]) }}" class="btn btn-primary btn-lg" style="font-size: 1.1rem;"><i class="fas fa-edit"></i>
+                        <a href="/hotel/editrooms/{{$roomData->id}}" class="btn btn-primary btn-lg" style="font-size: 1.1rem;"><i class="fas fa-edit"></i>
                             Edit</a>
-                        <a href="{{route ('roomdetail.rooms', ['id' => $roomData->id]) }}" class="btn btn-warning btn-lg" style="font-size: 1.1rem;"><i class="fa-solid fa-eye"></i>
+                        <a href="{{route ('app.roomdetail.rooms', ['id' => $roomData->id]) }}" class="btn btn-warning btn-lg" style="font-size: 1.1rem;"><i class="fa-solid fa-eye"></i>
                             View</a>
-                        <a href="{{ route('delete.rooms', ['id' => $roomData->id]) }}" class="btn btn-danger btn-lg show_confirm " onclick="return confirm('Are you sure you want to delete this?');" style="font-size: 1.1rem;"><i class="fas fa-user-times"></i>
+                        <a href="{{ route('app.delete.rooms', ['id' => $roomData->id]) }}" class="btn btn-danger btn-lg show_confirm " onclick="return confirm('Are you sure you want to delete this?');" style="font-size: 1.1rem;"><i class="fas fa-user-times"></i>
                             Remove</a>
                     </td>
                 </tr>

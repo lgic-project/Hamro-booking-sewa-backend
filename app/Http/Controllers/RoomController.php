@@ -32,32 +32,19 @@ class RoomController extends Controller
         $roomData = new HotelRooms();
         $roomData->fill($request->all());
 
-        if ($request->has('room_gallery')) {
-            foreach ($request->file('room_gallery') as $roomGallery) {
-                $name = $roomGallery->getClientOriginalName();
-                $roomGallery->move(public_path('images/hotel/room/'), $name);
-                $roomGalleryData[] = $name;
-            }
-        } else {
-            $roomGalleryData = [];
-        }
-        $roomData->room_gallery = json_encode($roomGalleryData);
+        $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
+        // dd($newThumbnailImageName);
+        $request->room_gallery->move('images/hotel/room/', $newThumbnailImageName);
 
-        // $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
-        // // dd($newThumbnailImageName);
-        // $request->room_gallery->move('images/hotel/room/', $newThumbnailImageName);
-
-        // $roomData->room_gallery = $newThumbnailImageName;
+        $roomData->room_thumbnail = $newThumbnailImageName;
         $newThumbnailImageName = $request->file('room_thumbnail')->getClientOriginalName();
         // dd($newThumbnailImageName);
         $request->room_thumbnail->move('images/hotel/room/', $newThumbnailImageName);
 
         $roomData->room_thumbnail = $newThumbnailImageName;
-
-
         $roomData->slug = Str::slug($request->title);
         $roomData->save();
-        return redirect()->back()->with('success', 'New hotel room added successfully');
+        
     }
     public function list()
     {
@@ -85,14 +72,26 @@ class RoomController extends Controller
 
         if ($request->has('room_thumbnail')) {
 
-            File::delete(public_path('images/hotel/$title' . $roomData->room_thumbnail));
-
-            $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
+            File::delete(public_path('images/hotel/room/$title' . $roomData->room_thumbnail));
+        
+            $newThumbnailImageName = $request->file('room_thumbnail')->getClientOriginalName();
             // dd($newThumbnailImageName);
-            $request->room_thumbnail->move('images/hotel/$title', $newThumbnailImageName);
+            $request->room_thumbnail->move('images/hotel/rooms/$title', $newThumbnailImageName);
 
             $roomData->room_thumbnail = $newThumbnailImageName;
         }
+       
+       if ($request->has('room_gallery')) {
+
+            File::delete(public_path('images/hotel/$title' . $roomData->room_gallery));
+
+            $newThumbnailImageName = $request->file('room_gallery')->getClientOriginalName();
+            // dd($newThumbnailImageName);
+            $request->room_gallery->move('images/hotel/$title', $newThumbnailImageName);
+
+            $roomData->room_gallery = $newThumbnailImageName;
+        }
+       
         $roomData->save();
         return redirect()->route('listrooms')->with('success', 'Data updated successfully!!');
     }

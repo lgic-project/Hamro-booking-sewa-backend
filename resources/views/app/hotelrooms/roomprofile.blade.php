@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('app.master')
 
 @section('content')
 <section style="background-color: #eee;">
@@ -15,9 +15,9 @@
                         <h5 class="my-3">{{$roomData->title}}</h5>
                         
                         <div class="d-flex justify-content-center mb-2">
-                        <a href="{{route('listrooms') }}" class="btn btn-primary btn-lg" style="font-size: 1.1rem;"><i class="fas fa-edit"></i>
-                            Go Back</a>
-                    </a>
+                        <a href="{{ route('app.listrooms') }}" class="btn btn-primary btn-lg" style="font-size: 1.1rem;">
+                             <i class="fas fa-edit"></i> Go Back
+                            </a>
                             <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">

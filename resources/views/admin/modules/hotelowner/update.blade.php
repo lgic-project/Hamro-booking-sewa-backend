@@ -23,7 +23,7 @@
 
                                 <div class="position-relative form-group col-6"><label for="photos" class="">Photo</label>
                                     <img src="/images/hotel/{{$hotelownerData->photos}}" style="width:100px; height:100px;" />
-                                    <input name="photos" id="photos" type="file" class="form-control-file" wfd-id="id6">
+                                    <input name="photos" id="photos" type="file" accept="image/*" class="form-control-file" wfd-id="id6">
                                 </div>
 
                                 <div class="position-relative form-group col-6"><label for="title" class="">Title</label><input name="owner_title" id="owner_title" value="{{$hotelownerData->title}}" placeholder="Title" type="text" class="form-control" value="{{ $hotelownerData->title }}" wfd-id="id4">

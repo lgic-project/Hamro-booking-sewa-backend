@@ -23,7 +23,7 @@
 
                                 <div class="position-relative form-group col-6"><label for="photos" class="">Photo</label>
                                     <img src="/images/hotel/room/{{$roomData->room_gallery}}" style="width:100px; height:100px;" />
-                                    <input name="room_gallery" id="room_gallery" type="file" class="form-control-file" wfd-id="id6">
+                                    <input name="room_gallery" id="room_gallery" accept="image/*" type="file" class="form-control-file" wfd-id="id6">
                                 </div>
 
                                 <div class="position-relative form-group col-6">
@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="position-relative form-group col-6">
                                     <label for="room_thumbnail" class="">room_thumbnail
-                                    </label><input name="room_thumbnail" id="room_thumbnail" value="{{$roomData->room_thumbnail}}" placeholder="is_available" type="text" class="form-control" value="{{ $roomData->room_thumbnail }}" wfd-id="id4">
+                                    </label><input name="room_thumbnail" id="room_thumbnail"accept="image/*" value="{{$roomData->room_thumbnail}}" placeholder="is_available" type="text" class="form-control" value="{{ $roomData->room_thumbnail }}" wfd-id="id4">
                                 </div>
                                 <div class="position-relative form-group col-6">
                                     <label for="rating" class="">rating

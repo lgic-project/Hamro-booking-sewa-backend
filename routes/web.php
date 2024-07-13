@@ -28,9 +28,8 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-});
 
-Route::post('/login-mob', [MobAuthController::class, 'login'])->name('login.mob');
+});
 
 // route for mobile app
 Route::get('/json-owner', [HotelController::class, 'listMobile'])->name('list.mob');
@@ -69,10 +68,10 @@ Route::get('/hotel/rooms', [hotelappController::class, 'appindex'])->name('Addro
 Route::get('/hotel/createrooms', [hotelappController::class, 'appdisplay'])->name('display.app.room.form');
 Route::post('/hotel/createrooms', [hotelappController::class, 'appcreate'])->name('createrooms');
 Route::get('/hotel/listrooms', [hotelappController::class, 'applist'])->name('app.listrooms');
-Route::get('/hotel//editrooms/{id}', [hotelappController::class, 'appedit'])->name('edit.rooms');
-Route::post('/hotel/updaterooms/{id}', [hotelappController::class, 'appupdate'])->name('update.rooms');
-Route::get('/hotel/deleterooms/{id}', [hotelappController::class, 'appdelete'])->name('delete.rooms');
-Route::get('/hotel/roomdetail/{id}', [hotelappController::class, 'approomdetail'])->name('roomdetail.rooms');
+Route::get('/hotel/editrooms/{id}', [hotelappController::class, 'appedit'])->name('app.edit.rooms');
+Route::post('/hotel/updaterooms/{id}', [hotelappController::class, 'appupdate'])->name('app.update.rooms');
+Route::get('/hotel/deleterooms/{id}', [hotelappController::class, 'appdelete'])->name('app.delete.rooms');
+Route::get('/hotel/roomdetail/{id}', [hotelappController::class, 'approomdetail'])->name('app.roomdetail.rooms');
 
 //routes for hotel rooms for hotelowners
 
@@ -112,6 +111,9 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/doRegister', function (Request $req) {
     return response()->json($req);
 });
+
+Route::post('/login-mob', [MobAuthController::class, 'login'])->name('login.mob');
+
 
 Route::post('/registerUser/add', [LocalUsersController::class, 'store'])->name('store.register.user');
 Route::post('/login/mobile', [LoginController::class, 'login']);

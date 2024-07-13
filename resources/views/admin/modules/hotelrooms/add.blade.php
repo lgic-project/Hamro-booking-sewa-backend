@@ -96,11 +96,11 @@
                          </div>
                          <div class="form-group ">
                             <label>Hotel id</label>
-                            <input type="text" class="form-control" name="hotel_owner_id" placeholder="Hotel id">
+                            <input type="number" class="form-control" name="hotel_owner_id" placeholder="Hotel id">
                         </div>
                         <div class="form-group ">
                             <label>Price</label>
-                            <input type="text" class="form-control" name="price" placeholder="price">
+                            <input type="number" class="form-control" name="price" placeholder="price">
                         </div>
                         <div class="form-group">
                             <label>Total Rooms</label>
@@ -108,11 +108,11 @@
                         </div>
                         <div class="form-group">
                             <label>room_gallery</label>
-                            <input type="file" class="form-control" name="room_gallery[]" multiple="multiple" placeholder="room_gallery">
+                            <input type="file" class="form-control" accept="image/*" name="room_gallery[]" multiple="multiple" placeholder="room_gallery">
                         </div>
                         <div class="form-group">
                             <label>Rating </label>
-                            <input type="text" class="form-control" name="rating" placeholder="rating">
+                            <input type="number" class="form-control" name="rating" placeholder="rating">
                         </div>
                         <div class="form-group">
                             <label>Available </label>
@@ -120,7 +120,7 @@
                         </div>
                         <div class="form-group">
                             <label>Thmbnail</label>
-                            <input type="file" class="form-control" name="room_thumbnail" placeholder="room_thumbnail">
+                            <input type="file" class="form-control" accept="image/*" name="room_thumbnail" placeholder="room_thumbnail">
                         </div>
                         
                         <div class="form-group">
